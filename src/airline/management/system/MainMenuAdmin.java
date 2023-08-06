@@ -147,7 +147,7 @@ public class MainMenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_backActionPerformed
 
     private void Tic_CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tic_CancelActionPerformed
-        TicketCancellation C = new TicketCancellation();
+        TicketCancellation C = new TicketCancellation("MainMenuAdmin");
         this.hide();
         C.setVisible(true);
     }//GEN-LAST:event_Tic_CancelActionPerformed
@@ -159,19 +159,19 @@ public class MainMenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_Cus_RegActionPerformed
 
     private void Staff_RegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Staff_RegActionPerformed
-        StaffRegistration C = new StaffRegistration();
+        StaffRegistration C = new StaffRegistration("MainMenuAdmin");
         this.hide();
         C.setVisible(true);
     }//GEN-LAST:event_Staff_RegActionPerformed
 
     private void Tic_BookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tic_BookActionPerformed
-        TicketBooking C = new TicketBooking();
+        TicketBooking C = new TicketBooking("MainMenuAdmin");
         this.hide();
         C.setVisible(true);
     }//GEN-LAST:event_Tic_BookActionPerformed
 
     private void feedbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_feedbackActionPerformed
-        Feedback C = new Feedback();
+        Feedback C = new Feedback("MainMenuAdmin");
         this.hide();
         C.setVisible(true);
     }//GEN-LAST:event_feedbackActionPerformed

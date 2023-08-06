@@ -10,11 +10,13 @@ package airline.management.system;
  */
 public class Feedback extends javax.swing.JFrame {
 
+    private String sourcePage;
     /**
      * Creates new form Feedback
      */
-    public Feedback() {
+    public Feedback(String sourcePage) {
         initComponents();
+        this.sourcePage = sourcePage;
     }
 
     /**
@@ -86,10 +88,16 @@ public class Feedback extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-        //For back Button
-        this.hide();
-        MainMenuAdmin frm = new MainMenuAdmin ();
-        frm.setVisible(true);
+        // For back Button
+        this.dispose(); // Close the current page
+    
+        if (sourcePage.equals("MainMenuAdmin")) {
+            MainMenuAdmin adminPage = new MainMenuAdmin();
+            adminPage.setVisible(true);
+        } else if (sourcePage.equals("MainMenuStaff")) {
+            MainMenuStaff staffPage = new MainMenuStaff();
+            staffPage.setVisible(true);
+        }
     }//GEN-LAST:event_backActionPerformed
 
     /**
@@ -122,7 +130,8 @@ public class Feedback extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Feedback().setVisible(true);
+                new Feedback("MainMenuAdmin").setVisible(true);
+                new Feedback("MainMenuStaff").setVisible(true);
             }
         });
     }

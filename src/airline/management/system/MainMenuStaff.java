@@ -148,19 +148,19 @@ public class MainMenuStaff extends javax.swing.JFrame {
     }//GEN-LAST:event_Cus_RegActionPerformed
 
     private void Tic_CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tic_CancelActionPerformed
-        TicketCancellation C = new TicketCancellation();
+        TicketCancellation C = new TicketCancellation("MainMenuStaff");
         this.hide();
         C.setVisible(true);
     }//GEN-LAST:event_Tic_CancelActionPerformed
 
     private void Tic_BookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tic_BookActionPerformed
-        TicketBooking C = new TicketBooking();
+        TicketBooking C = new TicketBooking("MainMenuStaff");
         this.hide();
         C.setVisible(true);
     }//GEN-LAST:event_Tic_BookActionPerformed
 
     private void feedbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_feedbackActionPerformed
-        Feedback C = new Feedback();
+        Feedback C = new Feedback("MainMenuStaff");
         this.hide();
         C.setVisible(true);
     }//GEN-LAST:event_feedbackActionPerformed
