@@ -4,6 +4,13 @@
  */
 package airline.management.system;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,6 +19,9 @@ import javax.swing.JOptionPane;
  */
 public class Admin extends javax.swing.JFrame {
 
+    Connection con;
+    PreparedStatement pst;
+    ResultSet rs;
     /**
      * Creates new form Admin
      */
@@ -152,20 +162,45 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        // TODO add your handling code here:
-        String name = uname.getText();
+        String username = uname.getText();
         String password = pswrd.getText();
-        
-        if (name.equals("Rimaz")&& password.equals("1234")){
-            MainMenuAdmin c = new MainMenuAdmin ();
-            this.hide();
-            c.setVisible(true);
-        }else
-        {
-            JOptionPane.showMessageDialog(this, "Username and Password do not match!");
-            uname.setText("");
-            pswrd.setText("");
+            
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline_management_system","root","");
+            
+            if (!username.equals("") && !password.equals(""))
+            {
+                pst = con.prepareStatement("select * from admin where User_Name = ? and Password = ?");
+                pst.setString(1, username);
+                pst.setString(2, password);
+                rs = pst.executeQuery();
+          
+            if (rs.next()) {
+                // username and password match, do something here
+                MainMenuAdmin m = new MainMenuAdmin ();
+                this.hide();
+                m.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "User_Name and Password do not match!");
+                uname.setText("");
+                pswrd.setText("");
+            }
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this, "User_Name or Password Field is empty");
+                uname.setText("");
+                pswrd.setText("");
+            }
+
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }//GEN-LAST:event_loginActionPerformed
 
     /**
