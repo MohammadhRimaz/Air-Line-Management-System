@@ -10,11 +10,13 @@ package airline.management.system;
  */
 public class Flight extends javax.swing.JFrame {
 
+    private String sourcePage;
     /**
      * Creates new form Flight
      */
-    public Flight() {
+    public Flight(String sourcePage) {
         initComponents();
+        this.sourcePage = sourcePage;
     }
 
     /**
@@ -87,6 +89,11 @@ public class Flight extends javax.swing.JFrame {
         jButton2.setText("Delete");
 
         jButton3.setText("Back");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Save");
 
@@ -204,7 +211,21 @@ public class Flight extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // For back Button
+        this.dispose(); // Close the current page
+    
+        if (sourcePage.equals("MainMenuAdmin")) {
+            MainMenuAdmin adminPage = new MainMenuAdmin();
+            adminPage.setVisible(true);
+        } else if (sourcePage.equals("MainMenuStaff")) {
+            MainMenuStaff staffPage = new MainMenuStaff();
+            staffPage.setVisible(true);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,7 +257,8 @@ public class Flight extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Flight().setVisible(true);
+                new Flight("MainMenuAdmin").setVisible(true);
+                new Flight("MainMenuStaff").setVisible(true);
             }
         });
     }
