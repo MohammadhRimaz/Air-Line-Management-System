@@ -4,6 +4,7 @@
  */
 package airline.management.system;
 
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -22,13 +23,57 @@ public class Staff extends javax.swing.JFrame {
     Connection con;
     PreparedStatement pst;
     ResultSet rs;
+    
+    String jdbcUrl = "jdbc:mysql://localhost:3306/airline_management_system";
+    String user = "root";
+    String dbpassword = "";
+    
     /**
      * Creates new form Staff
      */
     public Staff() {
         initComponents();
+        uname.requestFocus();
     }
 
+    private void performLogin() {
+        String username = uname.getText();
+        String password = pswrd.getText();
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(jdbcUrl, user, dbpassword);
+
+            if (!username.isEmpty() && !password.isEmpty()) {
+                pst = con.prepareStatement("select * from staff where User_Name = ? and Password = ?");
+                pst.setString(1, username);
+                pst.setString(2, password);
+                rs = pst.executeQuery();
+
+            if (rs.next()) {
+                MainMenuAdmin m = new MainMenuAdmin();
+                this.setVisible(false);
+                m.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "User_Name and Password do not match!");
+                uname.setText("");
+                pswrd.setText("");
+                uname.requestFocus();
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "User_Name or Password Field is empty");
+                uname.setText("");
+                pswrd.setText("");
+                uname.requestFocus();
+            }
+            con.close();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -57,10 +102,22 @@ public class Staff extends javax.swing.JFrame {
 
         jLabel2.setText("Password");
 
+        pswrd.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                pswrdKeyPressed(evt);
+            }
+        });
+
         login.setText("Login");
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginActionPerformed(evt);
+            }
+        });
+
+        uname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                unameKeyPressed(evt);
             }
         });
 
@@ -182,49 +239,24 @@ public class Staff extends javax.swing.JFrame {
     }//GEN-LAST:event_backActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        //Login Button
-        String name = uname.getText();
-        String password = pswrd.getText();
-        
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline_management_system","root","");
-            
-            //Above line change "root" as I given username for database 
-            //And input ur password within "" next to the "root".
-            
-            if (!name.equals("") && !password.equals(""))
-            {
-                pst = con.prepareStatement("select * from staff where User_Name = ? and Password = ?");
-                pst.setString(1, name);
-                pst.setString(2, password);
-                rs = pst.executeQuery();
-          
-            if (rs.next()) {
-                // username and password match, do something here
-                MainMenuStaff m = new MainMenuStaff ();
-                this.hide();
-                m.setVisible(true);
-            } else {
-                JOptionPane.showMessageDialog(this, "User_Name and Password do not match!");
-                uname.setText("");
-                pswrd.setText("");
-            }
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(this, "User_Name or Password Field is empty");
-                uname.setText("");
-                pswrd.setText("");
-            }
-            
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Staff.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Staff.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        performLogin();
     }//GEN-LAST:event_loginActionPerformed
+
+    private void unameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_unameKeyPressed
+        //After pressing down button in cus_name field....
+        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
+        pswrd.requestFocus();
+        }
+    }//GEN-LAST:event_unameKeyPressed
+
+    private void pswrdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pswrdKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            performLogin();
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
+            uname.requestFocus();
+        }
+    }//GEN-LAST:event_pswrdKeyPressed
 
     /**
      * @param args the command line arguments

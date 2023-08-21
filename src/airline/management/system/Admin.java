@@ -4,6 +4,7 @@
  */
 package airline.management.system;
 
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -22,13 +23,57 @@ public class Admin extends javax.swing.JFrame {
     Connection con;
     PreparedStatement pst;
     ResultSet rs;
+    
+    String jdbcUrl = "jdbc:mysql://localhost:3306/airline_management_system";
+    String user = "root";
+    String dbpassword = "";
+        
     /**
      * Creates new form Admin
      */
     public Admin() {
         initComponents();
+        uname.requestFocus();
     }
+    
+    private void performLogin() {
+        String username = uname.getText();
+        String password = pswrd.getText();
 
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(jdbcUrl, user, dbpassword);
+
+            if (!username.isEmpty() && !password.isEmpty()) {
+                pst = con.prepareStatement("select * from admin where User_Name = ? and Password = ?");
+                pst.setString(1, username);
+                pst.setString(2, password);
+                rs = pst.executeQuery();
+
+            if (rs.next()) {
+                MainMenuAdmin m = new MainMenuAdmin();
+                this.setVisible(false);
+                m.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "User_Name and Password do not match!");
+                uname.setText("");
+                pswrd.setText("");
+                uname.requestFocus();
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "User_Name or Password Field is empty");
+                uname.setText("");
+                pswrd.setText("");
+                uname.requestFocus();
+            }
+            con.close();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -57,6 +102,12 @@ public class Admin extends javax.swing.JFrame {
 
         jLabel2.setText("Password");
 
+        pswrd.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                pswrdKeyPressed(evt);
+            }
+        });
+
         login.setText("Login");
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,45 +129,42 @@ public class Admin extends javax.swing.JFrame {
             }
         });
 
+        uname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                unameKeyPressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(login))
+                .addGap(49, 49, 49)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(54, 54, 54)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(45, 45, 45)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(49, 49, 49)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(pswrd)
-                            .addComponent(uname, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(login)
-                        .addGap(33, 33, 33)
                         .addComponent(clear)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                        .addComponent(jButton3)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                        .addComponent(jButton3))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(pswrd)
+                        .addComponent(uname, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel1)
-                        .addGap(24, 24, 24))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(uname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(uname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(pswrd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -190,48 +238,24 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        String username = uname.getText();
-        String password = pswrd.getText();
-            
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline_management_system","root","");
-            //Above line change "root" as I given username for database 
-            //And input ur password within "" next to the "root".
-            
-            if (!username.equals("") && !password.equals(""))
-            {
-                pst = con.prepareStatement("select * from admin where User_Name = ? and Password = ?");
-                pst.setString(1, username);
-                pst.setString(2, password);
-                rs = pst.executeQuery();
-          
-            if (rs.next()) {
-                // username and password match, do something here
-                MainMenuAdmin m = new MainMenuAdmin ();
-                this.hide();
-                m.setVisible(true);
-            } else {
-                JOptionPane.showMessageDialog(this, "User_Name and Password do not match!");
-                uname.setText("");
-                pswrd.setText("");
-            }
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(this, "User_Name or Password Field is empty");
-                uname.setText("");
-                pswrd.setText("");
-            }
-
-            
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        performLogin ();
     }//GEN-LAST:event_loginActionPerformed
+
+    private void unameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_unameKeyPressed
+        //After pressing down button in cus_name field....
+        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
+        pswrd.requestFocus();
+        }
+    }//GEN-LAST:event_unameKeyPressed
+
+    private void pswrdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pswrdKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            performLogin();
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
+            uname.requestFocus();
+        }
+    }//GEN-LAST:event_pswrdKeyPressed
 
     /**
      * @param args the command line arguments

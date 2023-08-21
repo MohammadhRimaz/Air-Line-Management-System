@@ -23,6 +23,10 @@ import javax.swing.table.DefaultTableModel;
 public class StaffRegistration extends javax.swing.JFrame {
 
     private final String sourcePage;
+    String jdbcUrl = "jdbc:mysql://localhost:3306/airline_management_system";
+    String user = "root";
+    String dbpassword = "";
+    
     /**
      * Creates new form StaffRegistration
      */
@@ -149,12 +153,6 @@ public class StaffRegistration extends javax.swing.JFrame {
         address.setColumns(20);
         address.setRows(5);
         jScrollPane2.setViewportView(address);
-
-        uname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                unameActionPerformed(evt);
-            }
-        });
 
         jLabel7.setText("User Name");
 
@@ -321,7 +319,7 @@ public class StaffRegistration extends javax.swing.JFrame {
         int c;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline_management_system","root","");
+            con = DriverManager.getConnection(jdbcUrl, user, dbpassword);
             
             pst = con.prepareStatement("select * from staff");
             ResultSet Rs = pst.executeQuery();
@@ -351,7 +349,7 @@ public class StaffRegistration extends javax.swing.JFrame {
                 }
                df.addRow(v2);
             }
-            
+            con.close(); 
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(StaffRegistration.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -388,8 +386,7 @@ public class StaffRegistration extends javax.swing.JFrame {
         
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline_management_system","root","");
-            //if u pull the project just rename the root as ur user name and change this "" to add ur passwrd within it.... 
+            con = DriverManager.getConnection(jdbcUrl, user, dbpassword);
             
             if (Sname.equals("")||Suname.equals("")||Spswrd.equals("")||Smail.equals("")||Snic.equals("")||Spay.equals("")||Saddress.equals("")||Scontact.equals(""))
             {
@@ -424,8 +421,7 @@ public class StaffRegistration extends javax.swing.JFrame {
                 name.requestFocus();
                 table_update();
             }
-            
-            
+            con.close(); 
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(StaffRegistration.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -434,10 +430,6 @@ public class StaffRegistration extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void unameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_unameActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         //For Edit Button
@@ -457,7 +449,7 @@ public class StaffRegistration extends javax.swing.JFrame {
             
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline_management_system","root","");
+            con = DriverManager.getConnection(jdbcUrl, user, dbpassword);
             
             if (Sname.equals("")||Suname.equals("")||Spswrd.equals("")||Smail.equals("")||Snic.equals("")||Spay.equals("")||Saddress.equals("")||Scontact.equals(""))
             {
@@ -493,7 +485,7 @@ public class StaffRegistration extends javax.swing.JFrame {
                 name.requestFocus();
                 table_update();
             }
-            
+            con.close(); 
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(StaffRegistration.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -529,12 +521,12 @@ public class StaffRegistration extends javax.swing.JFrame {
         
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline_management_system","root","");
+            con = DriverManager.getConnection(jdbcUrl, user, dbpassword);
             
             pst = con.prepareStatement("delete from staff where Name = ?");
             pst.setString(1, Sname);
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(this, "Record Deleted");
+            JOptionPane.showMessageDialog(this, "Staff Deleted");
             
             name.setText("");            
             uname.setText("");
@@ -548,7 +540,7 @@ public class StaffRegistration extends javax.swing.JFrame {
             shiftbox.setSelectedIndex(-1);
             name.requestFocus();
             table_update();
-            
+            con.close(); 
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(StaffRegistration.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {

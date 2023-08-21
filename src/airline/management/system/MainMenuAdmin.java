@@ -4,6 +4,8 @@
  */
 package airline.management.system;
 
+import java.awt.event.KeyEvent;
+
 /**
  *
  * @author moham
@@ -47,11 +49,21 @@ public class MainMenuAdmin extends javax.swing.JFrame {
                 Tic_CancelActionPerformed(evt);
             }
         });
+        Tic_Cancel.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Tic_CancelKeyPressed(evt);
+            }
+        });
 
         Tic_Book.setText("Ticket Booking");
         Tic_Book.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Tic_BookActionPerformed(evt);
+            }
+        });
+        Tic_Book.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Tic_BookKeyPressed(evt);
             }
         });
 
@@ -61,11 +73,21 @@ public class MainMenuAdmin extends javax.swing.JFrame {
                 backActionPerformed(evt);
             }
         });
+        back.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                backKeyPressed(evt);
+            }
+        });
 
         Cus_Reg.setText("Customer Registration");
         Cus_Reg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Cus_RegActionPerformed(evt);
+            }
+        });
+        Cus_Reg.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Cus_RegKeyPressed(evt);
             }
         });
 
@@ -75,6 +97,11 @@ public class MainMenuAdmin extends javax.swing.JFrame {
                 Staff_RegActionPerformed(evt);
             }
         });
+        Staff_Reg.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Staff_RegKeyPressed(evt);
+            }
+        });
 
         feedback.setText("FeedBack");
         feedback.addActionListener(new java.awt.event.ActionListener() {
@@ -82,11 +109,21 @@ public class MainMenuAdmin extends javax.swing.JFrame {
                 feedbackActionPerformed(evt);
             }
         });
+        feedback.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                feedbackKeyPressed(evt);
+            }
+        });
 
         flight.setText("Flight");
         flight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 flightActionPerformed(evt);
+            }
+        });
+        flight.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                flightKeyPressed(evt);
             }
         });
 
@@ -214,6 +251,112 @@ public class MainMenuAdmin extends javax.swing.JFrame {
         this.hide();
         C.setVisible(true);
     }//GEN-LAST:event_flightActionPerformed
+
+    //FOR KEYBOARD KEYS....
+    private void Tic_CancelKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Tic_CancelKeyPressed
+
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            TicketCancellation C = new TicketCancellation("MainMenuAdmin");
+            this.hide();
+            C.setVisible(true);
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
+            Cus_Reg.requestFocus();
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
+            Tic_Book.requestFocus();
+        }
+    }//GEN-LAST:event_Tic_CancelKeyPressed
+
+    private void Tic_BookKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Tic_BookKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            TicketBooking C = new TicketBooking("MainMenuAdmin");
+            this.hide();
+            C.setVisible(true);
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
+            Tic_Cancel.requestFocus();
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
+            Staff_Reg.requestFocus();
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
+            back.requestFocus();
+        }
+    }//GEN-LAST:event_Tic_BookKeyPressed
+
+    private void backKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_backKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            this.hide();
+            CommonLogin frm = new CommonLogin ();
+            frm.setVisible(true);
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
+            Tic_Book.requestFocus();
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
+            feedback.requestFocus();
+        }
+    }//GEN-LAST:event_backKeyPressed
+
+    private void Cus_RegKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Cus_RegKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            Customer C = new Customer("MainMenuAdmin");
+            this.hide();
+            C.setVisible(true);
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
+            Tic_Cancel.requestFocus();
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
+            Staff_Reg.requestFocus();
+        }
+    }//GEN-LAST:event_Cus_RegKeyPressed
+
+    private void Staff_RegKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Staff_RegKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            StaffRegistration C = new StaffRegistration("MainMenuAdmin");
+            this.hide();
+            C.setVisible(true);
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
+            Cus_Reg.requestFocus();
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
+            Tic_Book.requestFocus();
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
+            feedback.requestFocus();
+        }
+    }//GEN-LAST:event_Staff_RegKeyPressed
+
+    private void feedbackKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_feedbackKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            Feedback C = new Feedback("MainMenuAdmin");
+            this.hide();
+            C.setVisible(true);
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
+            Staff_Reg.requestFocus();
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
+            back.requestFocus();
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
+            flight.requestFocus();
+        }
+    }//GEN-LAST:event_feedbackKeyPressed
+
+    private void flightKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_flightKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            Flight C = new Flight("MainMenuAdmin");
+            this.hide();
+            C.setVisible(true);
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
+            feedback.requestFocus();
+        }
+    }//GEN-LAST:event_flightKeyPressed
 
     /**
      * @param args the command line arguments

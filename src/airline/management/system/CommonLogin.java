@@ -5,6 +5,7 @@
 package airline.management.system;
 
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowEvent;
 
 /**
@@ -46,6 +47,11 @@ public class CommonLogin extends javax.swing.JFrame {
                 adminActionPerformed(evt);
             }
         });
+        admin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                adminKeyPressed(evt);
+            }
+        });
 
         exit.setText("Exit");
         exit.addActionListener(new java.awt.event.ActionListener() {
@@ -53,11 +59,21 @@ public class CommonLogin extends javax.swing.JFrame {
                 exitActionPerformed(evt);
             }
         });
+        exit.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                exitKeyPressed(evt);
+            }
+        });
 
         staff.setText("Staff");
         staff.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 staffActionPerformed(evt);
+            }
+        });
+        staff.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                staffKeyPressed(evt);
             }
         });
 
@@ -132,7 +148,7 @@ public class CommonLogin extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminActionPerformed
         Admin C = new Admin();
         this.hide();
@@ -150,6 +166,41 @@ public class CommonLogin extends javax.swing.JFrame {
         WindowEvent closewindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closewindow);
     }//GEN-LAST:event_exitActionPerformed
+
+    private void adminKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_adminKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            Admin C = new Admin();
+            this.hide();
+            C.setVisible(true);
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
+            staff.requestFocus();
+        }
+    }//GEN-LAST:event_adminKeyPressed
+
+    private void staffKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_staffKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            Staff C = new Staff();
+            this.hide();
+            C.setVisible(true);
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
+            admin.requestFocus();
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
+            exit.requestFocus();
+        }
+    }//GEN-LAST:event_staffKeyPressed
+
+    private void exitKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_exitKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            WindowEvent closewindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+            Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closewindow);
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
+            staff.requestFocus();
+        }
+    }//GEN-LAST:event_exitKeyPressed
 
     /**
      * @param args the command line arguments

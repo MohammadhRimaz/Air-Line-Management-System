@@ -108,6 +108,7 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tic_CancelActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Tic_CancelKeyPressed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Tic_Book">
@@ -116,6 +117,7 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tic_BookActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Tic_BookKeyPressed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="back">
@@ -124,6 +126,7 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="backKeyPressed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Cus_Reg">
@@ -132,6 +135,7 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Cus_RegActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Cus_RegKeyPressed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Staff_Reg">
@@ -140,6 +144,7 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Staff_RegActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Staff_RegKeyPressed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="feedback">
@@ -148,6 +153,7 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="feedbackActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="feedbackKeyPressed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="flight">
@@ -156,6 +162,7 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="flightActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="flightKeyPressed"/>
           </Events>
         </Component>
       </SubComponents>
