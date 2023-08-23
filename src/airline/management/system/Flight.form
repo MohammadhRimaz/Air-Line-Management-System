@@ -100,7 +100,7 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jComboBox2" pref="122" max="32767" attributes="0"/>
+                              <Component id="jComboBox2" max="32767" attributes="0"/>
                               <Component id="jComboBox1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -179,11 +179,23 @@
         <Component class="javax.swing.JComboBox" name="jComboBox1">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="16">
+                <StringItem index="0" value="Sydney&#x9;-Australia"/>
+                <StringItem index="1" value="Melbourne&#x9;-Australia"/>
+                <StringItem index="2" value="Hong Kong&#x9;-China"/>
+                <StringItem index="3" value="Tokyo&#x9;-China"/>
+                <StringItem index="4" value="Osaka&#x9;-China"/>
+                <StringItem index="5" value="Lahore&#x9;-Pakistan"/>
+                <StringItem index="6" value="Karachi&#x9;-Pakistan"/>
+                <StringItem index="7" value="Chennai&#x9;-India"/>
+                <StringItem index="8" value="Delhi&#x9;-India"/>
+                <StringItem index="9" value="Bangalore&#x9;-India"/>
+                <StringItem index="10" value="Singapore&#x9;-Singapore"/>
+                <StringItem index="11" value="Kuala Lamoure&#x9;-Malaysia"/>
+                <StringItem index="12" value="Bangkok&#x9;-Thailand"/>
+                <StringItem index="13" value="Male&#x9;-Maldives"/>
+                <StringItem index="14" value="Dhaka&#x9;-Bangladesh"/>
+                <StringItem index="15" value="Auckland&#x9;-New Zealand"/>
               </StringArray>
             </Property>
           </Properties>
@@ -194,14 +206,14 @@
         <Component class="javax.swing.JComboBox" name="jComboBox2">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="1">
+                <StringItem index="0" value="Colombo"/>
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox2ActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
