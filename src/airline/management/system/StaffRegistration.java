@@ -519,34 +519,37 @@ public class StaffRegistration extends javax.swing.JFrame {
         String Sname = d1.getValueAt(selectIndex, 1).toString(); 
         int dialogResult = JOptionPane.showConfirmDialog(this," Do you want to delete?", "Warning!",JOptionPane.YES_NO_OPTION );
         
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection(jdbcUrl, user, dbpassword);
+        if (dialogResult == JOptionPane.YES_OPTION)
+        {
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                con = DriverManager.getConnection(jdbcUrl, user, dbpassword);
             
-            pst = con.prepareStatement("delete from staff where Name = ?");
-            pst.setString(1, Sname);
-            pst.executeUpdate();
-            JOptionPane.showMessageDialog(this, "Staff Deleted");
+                pst = con.prepareStatement("delete from staff where Name = ?");
+                pst.setString(1, Sname);
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(this, "Staff Deleted");
             
-            name.setText("");            
-            uname.setText("");
-            pswrd.setText("");
-            mail.setText("");
-            nic.setText("");            
-            payment.setText("");
-            address.setText("");
-            contact_no.setText("");
-            genderbox.setSelectedIndex(-1);
-            shiftbox.setSelectedIndex(-1);
-            name.requestFocus();
-            table_update();
-            con.close(); 
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(StaffRegistration.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(StaffRegistration.class.getName()).log(Level.SEVERE, null, ex);
+                name.setText("");            
+                uname.setText("");
+                pswrd.setText("");
+                mail.setText("");
+                nic.setText("");            
+                payment.setText("");
+                address.setText("");
+                contact_no.setText("");
+                genderbox.setSelectedIndex(-1);
+                shiftbox.setSelectedIndex(-1);
+                name.requestFocus();
+                table_update();
+                
+                con.close(); 
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(StaffRegistration.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(StaffRegistration.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

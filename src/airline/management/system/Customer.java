@@ -555,25 +555,28 @@ public class Customer extends javax.swing.JFrame {
             String Cid = d1.getValueAt(selectIndex, 0).toString(); 
             int dialogResult = JOptionPane.showConfirmDialog(this," Do you want to delete?", "Warning!",JOptionPane.YES_NO_OPTION );
         
-            pst = con.prepareStatement("delete from customer where Cus_ID = ?");
-            pst.setString(1, Cid);
-            pst.executeUpdate();
-            JOptionPane.showMessageDialog(this,"Customer Deleted.");
+            if (dialogResult == JOptionPane.YES_OPTION)
+            {
+                pst = con.prepareStatement("delete from customer where Cus_ID = ?");
+                pst.setString(1, Cid);
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(this,"Customer Deleted.");
             
-            cusid.setText("");            
-            cusname.setText("");
-            passport.setText("");
-            email.setText("");
-            age.setText("");            
-            contact.setText("");
-            address.setText("");
-            genderbox.setSelectedIndex(-1);
-            nationalitybox.setSelectedIndex(-1);
-            cusname.requestFocus();
-            table_update();
-            autoID();
+                cusid.setText("");            
+                cusname.setText("");
+                passport.setText("");
+                email.setText("");
+                age.setText("");            
+                contact.setText("");
+                address.setText("");
+                genderbox.setSelectedIndex(-1);
+                nationalitybox.setSelectedIndex(-1);
+                cusname.requestFocus();
+                table_update();
+                autoID();
             
-            con.close(); 
+                con.close(); 
+            }
             
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Customer.class.getName()).log(Level.SEVERE, null, ex);
