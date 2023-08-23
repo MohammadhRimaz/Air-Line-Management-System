@@ -86,7 +86,7 @@ public class TicketBooking extends javax.swing.JFrame {
 
         jLabel2.setText("Customer Name");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "S1", "S2", "S3", "F1", "F2", "C1", "S4", "S5", "C2", "C3", "S6", "C4", "S7", "F3", "F4", "S8" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "S1", "S2", "S3", "S4", "S5", "S6", "S7", "S8", "F1", "F2", "F3", "F4", "C1", "C2", "C3", "C4" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
