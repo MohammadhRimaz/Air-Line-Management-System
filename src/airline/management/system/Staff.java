@@ -51,7 +51,7 @@ public class Staff extends javax.swing.JFrame {
                 rs = pst.executeQuery();
 
             if (rs.next()) {
-                MainMenuAdmin m = new MainMenuAdmin();
+                MainMenuStaff m = new MainMenuStaff();
                 this.setVisible(false);
                 m.setVisible(true);
             } else {

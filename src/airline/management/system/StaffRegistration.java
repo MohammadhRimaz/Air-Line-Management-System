@@ -55,9 +55,9 @@ public class StaffRegistration extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        add = new javax.swing.JButton();
+        edit = new javax.swing.JButton();
+        delete = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         shiftbox = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
@@ -113,24 +113,24 @@ public class StaffRegistration extends javax.swing.JFrame {
 
         jLabel4.setText("NIC");
 
-        jButton4.setText("Save");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        add.setText("ADD");
+        add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                addActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Edit");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        edit.setText("Edit");
+        edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                editActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Delete");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        delete.setText("Delete");
+        delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                deleteActionPerformed(evt);
             }
         });
 
@@ -192,7 +192,7 @@ public class StaffRegistration extends javax.swing.JFrame {
                             .addComponent(payment, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
                             .addComponent(mail, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(72, 72, 72)
-                        .addComponent(jButton4))
+                        .addComponent(add))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -205,13 +205,13 @@ public class StaffRegistration extends javax.swing.JFrame {
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(28, 28, 28)
-                                .addComponent(jButton5)))
+                                .addComponent(edit)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(genderbox, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(29, 29, 29)
-                                .addComponent(jButton2)))))
+                                .addComponent(delete)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(back)
                 .addGap(31, 31, 31))
@@ -252,9 +252,9 @@ public class StaffRegistration extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(payment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(back)
-                            .addComponent(jButton2)
-                            .addComponent(jButton5)
-                            .addComponent(jButton4))
+                            .addComponent(delete)
+                            .addComponent(edit)
+                            .addComponent(add))
                         .addGap(14, 14, 14)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
@@ -371,7 +371,7 @@ public class StaffRegistration extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_backActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         //Save Button
         String Sname = name.getText();
         String Suname = uname.getText();        
@@ -429,9 +429,9 @@ public class StaffRegistration extends javax.swing.JFrame {
         }
         
         
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_addActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
         //For Edit Button
         DefaultTableModel d1 = (DefaultTableModel)jTable1.getModel();
         int selectIndex = jTable1.getSelectedRow();
@@ -492,7 +492,7 @@ public class StaffRegistration extends javax.swing.JFrame {
             Logger.getLogger(StaffRegistration.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_editActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         //Mouse clicked to a row in the table
@@ -511,7 +511,7 @@ public class StaffRegistration extends javax.swing.JFrame {
         shiftbox.setSelectedItem(d1.getValueAt( selectIndex, 10).toString());  
     }//GEN-LAST:event_jTable1MouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
         //For Delete Button
         DefaultTableModel d1 = (DefaultTableModel)jTable1.getModel();
         int selectIndex = jTable1.getSelectedRow();
@@ -550,7 +550,7 @@ public class StaffRegistration extends javax.swing.JFrame {
                 Logger.getLogger(StaffRegistration.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_deleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -589,13 +589,13 @@ public class StaffRegistration extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton add;
     private javax.swing.JTextArea address;
     private javax.swing.JButton back;
     private javax.swing.JTextField contact_no;
+    private javax.swing.JButton delete;
+    private javax.swing.JButton edit;
     private javax.swing.JComboBox<String> genderbox;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
