@@ -418,18 +418,18 @@ public class Customer extends javax.swing.JFrame {
         String Cpsprt = passport.getText();
         String Cmail = email.getText();
         String Cage = age.getText();
-        String Cnationality = nationalitybox.getSelectedItem() != null ? nationalitybox.getSelectedItem().toString() : null;
+        String Cnationality = nationalitybox.getSelectedItem().toString();
         String Caddress = address.getText();
         String Ccontact = contact.getText();
-        String Cgender = genderbox.getSelectedItem() != null ? genderbox.getSelectedItem().toString() : null;
+        String Cgender = genderbox.getSelectedItem().toString();
      
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(jdbcUrl, user, dbpassword);
             
-            if (Cid.equals("")||Cname.equals("")||Cpsprt.equals("")||Cmail.equals("")||Cage.equals("")||Cnationality == null||Caddress.equals("")||Ccontact.equals("")||Cgender == null)
+            if (Cid.equals("")||Cname.equals("")||Cpsprt.equals("")||Cmail.equals("")||Cage.equals("")||Cnationality.isEmpty()||Caddress.equals("")||Ccontact.equals("")||Cgender.isEmpty())
             {
-                JOptionPane.showMessageDialog(this, "Some Fields are empty or not selected");   
+                JOptionPane.showMessageDialog(this, "Some Fields are empty");   
             }
             else
             {
@@ -473,36 +473,36 @@ public class Customer extends javax.swing.JFrame {
         DefaultTableModel d1 = (DefaultTableModel)jTable1.getModel();
         int selectIndex = jTable1.getSelectedRow();
         
-        String Cid = d1.getValueAt(selectIndex, 0).toString();
+        String Cid = cusid.getText();
         String Cname = cusname.getText();        
         String Cpsprt = passport.getText();
         String Cmail = email.getText();
         String Cage = age.getText();
-        String Cnationality = nationalitybox.getSelectedItem() != null ? nationalitybox.getSelectedItem().toString() : null;
+        String Cnationality = nationalitybox.getSelectedItem().toString();
         String Caddress = address.getText();
         String Ccontact = contact.getText();
-        String Cgender = genderbox.getSelectedItem() != null ? genderbox.getSelectedItem().toString() : null;
+        String Cgender = genderbox.getSelectedItem().toString();
         
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(jdbcUrl, user, dbpassword);
             
-            if (Cid.equals("")||Cname.equals("")||Cpsprt.equals("")||Cmail.equals("")||Cage.equals("")||Cnationality == null ||Caddress.equals("")||Ccontact.equals("")||Cgender == null)
+            if (Cid.equals("")||Cname.equals("")||Cpsprt.equals("")||Cmail.equals("")||Cage.equals("")||Cnationality.equals("")||Caddress.equals("")||Ccontact.equals("")||Cgender.equals(""))
             {
-                JOptionPane.showMessageDialog(this, "Some Fields are empty or not selected");   
+                JOptionPane.showMessageDialog(this, "Some Fields are empty");   
             }
             else
             {
-                pst = con.prepareStatement("update customer set Customer_Name = ?,Gender = ?,Age = ?,Nationality = ?, Passport_No = ?, Email = ?,Address = ?,Contact_NO = ? where Cus_ID = ?");
-                pst.setString(1, Cname);
-                pst.setString(2, Cgender);
-                pst.setString(3, Cage);
-                pst.setString(4, Cnationality);
-                pst.setString(5, Cpsprt);
+                pst = con.prepareStatement("update customer set Cus_ID = ?,Customer_Name = ?,Gender = ?,Age = ?,Nationality = ?,Email = ?,Address = ?,Contact_NO = ? where Passport_No = ?");
+                pst.setString(1, Cid);
+                pst.setString(2, Cname);
+                pst.setString(3, Cgender);
+                pst.setString(4, Cage);
+                pst.setString(5, Cnationality);
                 pst.setString(6, Cmail);
                 pst.setString(7, Caddress);
                 pst.setString(8, Ccontact);
-                pst.setString(9, Cid);
+                pst.setString(9, Cpsprt);
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(this,"Customer Updated.");
             

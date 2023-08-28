@@ -381,16 +381,16 @@ public class StaffRegistration extends javax.swing.JFrame {
         String Spay = payment.getText();
         String Saddress = address.getText();
         String Scontact = contact_no.getText();
-        String Sgender = genderbox.getSelectedItem()!= null ? genderbox.getSelectedItem().toString() : null;
-        String Sshift = shiftbox.getSelectedItem() != null ? shiftbox.getSelectedItem().toString() : null;
+        String Sgender = genderbox.getSelectedItem().toString();
+        String Sshift = shiftbox.getSelectedItem().toString();
         
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(jdbcUrl, user, dbpassword);
             
-            if (Sname.equals("")||Suname.equals("")||Spswrd.equals("")||Smail.equals("")||Snic.equals("")||Spay.equals("")||Saddress.equals("")||Scontact.equals("")||Sgender == null || Sshift == null)
+            if (Sname.equals("")||Suname.equals("")||Spswrd.equals("")||Smail.equals("")||Snic.equals("")||Spay.equals("")||Saddress.equals("")||Scontact.equals(""))
             {
-                JOptionPane.showMessageDialog(this, "Some Fields are empty or not selected");   
+                JOptionPane.showMessageDialog(this, "Some Fields are empty");   
             }
             else
             {
@@ -437,7 +437,7 @@ public class StaffRegistration extends javax.swing.JFrame {
         int selectIndex = jTable1.getSelectedRow();
         
         String Sname = d1.getValueAt(selectIndex, 1).toString();
-        String Sgender = genderbox.getSelectedItem() != null ? genderbox.getSelectedItem().toString() : null;
+        String Sgender = genderbox.getSelectedItem().toString();
         String Snic = nic.getText();
         String Suname = uname.getText();        
         String Spswrd = pswrd.getText();
@@ -445,15 +445,15 @@ public class StaffRegistration extends javax.swing.JFrame {
         String Saddress = address.getText();
         String Scontact = contact_no.getText();
         String Spay = payment.getText();
-        String Sshift = shiftbox.getSelectedItem() != null ? shiftbox.getSelectedItem().toString() : null;
+        String Sshift = shiftbox.getSelectedItem().toString();
             
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(jdbcUrl, user, dbpassword);
             
-            if (Sname.equals("")||Suname.equals("")||Spswrd.equals("")||Smail.equals("")||Snic.equals("")||Spay.equals("")||Saddress.equals("")||Scontact.equals("")|| Sshift == null || Sgender == null)
+            if (Sname.equals("")||Suname.equals("")||Spswrd.equals("")||Smail.equals("")||Snic.equals("")||Spay.equals("")||Saddress.equals("")||Scontact.equals(""))
             {
-                JOptionPane.showMessageDialog(this, "Some Fields are empty or not selected");   
+                JOptionPane.showMessageDialog(this, "Some Fields are empty");   
             }
             else
             { 

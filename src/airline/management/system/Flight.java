@@ -12,9 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -41,7 +39,6 @@ public class Flight extends javax.swing.JFrame {
         tpe.setEnabled(false);
         tpb.setEnabled(false);
         tpf.setEnabled(false);
-        table_update();
     }
     
     Connection con;
@@ -59,7 +56,8 @@ public class Flight extends javax.swing.JFrame {
             ResultSetMetaData rd = Rs.getMetaData();
             c = rd.getColumnCount();
             DefaultTableModel df = (DefaultTableModel)jTable1.getModel();
-            df.setRowCount(0);     
+            df.setRowCount(0);
+            
             
             while(Rs.next())
             {
@@ -74,8 +72,7 @@ public class Flight extends javax.swing.JFrame {
                     v2.add(Rs.getString("Seat_Type"));
                     v2.add(Rs.getString("Source"));
                     v2.add(Rs.getString("Departure_Date"));
-                    v2.add(Rs.getString("Departure_Time"));
-                    v2.add(Rs.getString("Destination"));
+                    v2.add(Rs.getString("Departure_Time"));                
                     v2.add(Rs.getString("Arrival_Date"));
                     v2.add(Rs.getString("Arrival_Time"));
                     v2.add(Rs.getString("Ticket_Price"));
@@ -157,10 +154,8 @@ public class Flight extends javax.swing.JFrame {
         jLabel6.setText("No. of Seats");
 
         destinybox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chennai - India", "Delhi - India", "Bangalore - India", "Colombo - Sri Lanka", "Sydney - Australia", "Melbourne - Australia", "Hong Kong - China", "Tokyo - China", "Osaka - China", "Lahore - Pakistan", "Karachi - Pakistan", "Singapore - Singapore", "Kuala Lamoure - Malaysia", "Bangkok - Thailand", "Male - Maldives", "Dhaka - Bangladesh", "Auckland - New Zealand" }));
-        destinybox.setSelectedIndex(-1);
 
         sourcebox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Colombo - Sri Lanka", "Sydney - Australia", "Melbourne - Australia", "Hong Kong - China", "Tokyo - China", "Osaka - China", "Lahore - Pakistan", "Karachi - Pakistan", "Chennai - India", "Delhi - India", "Bangalore - India", "Singapore - Singapore", "Kuala Lamoure - Malaysia", "Bangkok - Thailand", "Male - Maldives", "Dhaka - Bangladesh", "Auckland - New Zealand" }));
-        sourcebox.setSelectedIndex(-1);
         sourcebox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sourceboxActionPerformed(evt);
@@ -168,11 +163,6 @@ public class Flight extends javax.swing.JFrame {
         });
 
         delete.setText("Delete");
-        delete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteActionPerformed(evt);
-            }
-        });
 
         jButton3.setText("Back");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -189,15 +179,13 @@ public class Flight extends javax.swing.JFrame {
         });
 
         edit.setText("Edit");
-        edit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editActionPerformed(evt);
-            }
-        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
                 "No", "Air Line", "Flight No", "No of Seats", "Seat Type", "Source", "Departure Date", "Departure Time", "Destination", "Arrival Date", "Arrival Time", "Ticket Price"
@@ -209,11 +197,6 @@ public class Flight extends javax.swing.JFrame {
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
-            }
-        });
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable1MouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(jTable1);
@@ -287,15 +270,24 @@ public class Flight extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(23, 23, 23))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(127, 127, 127)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Ebox, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
@@ -303,16 +295,9 @@ public class Flight extends javax.swing.JFrame {
                             .addComponent(F_no, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(airline, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Bbox, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                            .addComponent(Fbox, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                            .addComponent(Fbox, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE))
+                        .addGap(0, 150, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -329,12 +314,11 @@ public class Flight extends javax.swing.JFrame {
                                     .addComponent(tpe, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(tpf, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Dtime, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(sourcebox, 0, 158, Short.MAX_VALUE)
-                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(39, 39, 39)
+                                    .addComponent(Dtime))
+                                .addGap(51, 51, 51)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -348,7 +332,7 @@ public class Flight extends javax.swing.JFrame {
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(destinybox, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addGap(0, 113, Short.MAX_VALUE))))
+                        .addGap(0, 102, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(168, 168, 168)
                 .addComponent(add)
@@ -503,58 +487,55 @@ public class Flight extends javax.swing.JFrame {
         boolean businessChecked = Bbox.isSelected();
         boolean firstClassChecked = Fbox.isSelected();
 
-        String ETicprice = tpe.getText();
-        String BTicprice = tpb.getText();
-        String FTicprice = tpf.getText();
-        
         // Initialize a StringBuilder to build the combined data string
         StringBuilder combinedSeatTypeData = new StringBuilder();
-        StringBuilder combinedPriceData = new StringBuilder();
 
         // Add selected seat types to the combined data string
         if (economyChecked) {
             combinedSeatTypeData.append("Economy Class");
-            combinedPriceData.append(ETicprice);
         }
 
         if (businessChecked) {
             if (combinedSeatTypeData.length() > 0) {
                 combinedSeatTypeData.append(", ");
-                combinedPriceData.append(", ");
             }
                 combinedSeatTypeData.append("Business Class");
-                combinedPriceData.append(BTicprice);
         }
 
         if (firstClassChecked) {
             if (combinedSeatTypeData.length() > 0) {
                 combinedSeatTypeData.append(", ");
-                combinedPriceData.append(", ");
             }
             combinedSeatTypeData.append("First Class");
-            combinedPriceData.append(FTicprice);
         }
 
-        String Fsource = sourcebox.getSelectedItem() != null ? sourcebox.getSelectedItem().toString() : null;
+        String Fsource = sourcebox.getSelectedItem().toString();
         //departure date declared
-        String date = jDateChooser1.getDate() != null ? new SimpleDateFormat ("yyyy/MM/dd").format(jDateChooser1.getDate()) : null;
+        SimpleDateFormat Date_Format = new SimpleDateFormat ("yyyy/MM/dd");
+        String date = Date_Format.format(jDateChooser1.getDate());
         String Dptime = Dtime.getText();
-        String Fsource2 = destinybox.getSelectedItem() != null ? destinybox.getSelectedItem().toString() : null;
+        String Fsource2 = destinybox.getSelectedItem().toString();
         //arrival date declared
-        String date2 = jDateChooser2.getDate() != null ? new SimpleDateFormat ("yyyy/MM/dd").format(jDateChooser2.getDate()) : null;
+        SimpleDateFormat Date_Format2 = new SimpleDateFormat ("yyyy/MM/dd");
+        String date2 = Date_Format2.format(jDateChooser2.getDate());
         String arvltime = Atime.getText();
+        String ETicprice = tpe.getText();
+        String BTicprice = tpb.getText();
+        String FTicprice = tpf.getText();
+        //getting 3 variables and setting into one variable....
+        String combinedpriceData = ETicprice + ", " + BTicprice + ", " + FTicprice;
         
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(jdbcUrl, user, dbpassword);
             
-            if (Fairline.equals("")||Fno.equals("")||Fseats.equals("")||Fsource == null ||date == null ||Dptime.isEmpty()||Fsource2 == null||date2 == null||arvltime.equals("")||(Ebox.isSelected() && ETicprice.isEmpty()) ||(Bbox.isSelected() && BTicprice.isEmpty()) || (Fbox.isSelected() && FTicprice.isEmpty())) 
+            if (Fairline.equals("")||Fno.equals("")||Fseats.equals("")||Fsource.equals("")||date.equals("")||Dptime.isEmpty()||Fsource2.equals("")||date2.isEmpty()||arvltime.equals("")||(Ebox.isSelected() && ETicprice.isEmpty()) ||(Bbox.isSelected() && BTicprice.isEmpty()) || (Fbox.isSelected() && FTicprice.isEmpty())) 
             {
-                JOptionPane.showMessageDialog(this, "Some Fields are empty or not selected");   
+                JOptionPane.showMessageDialog(this, "Some Fields are empty");   
             }
             else
             {
-                pst = con.prepareStatement("insert into flight(Airline, Flight_No, No_of_Seats, Seat_Type, Source, Departure_Date, Departure_Time, Destination, Arrival_Date, Arrival_Time, Ticket_Price) values (?,?,?,?,?,?,?,?,?,?,?)");
+                pst = con.prepareStatement("insert into flight(Airline ,Flight_No,No_of_Seats,Seat_Type,Source,Departure_Date,Departure_Time,Destination,Arrival_Date,Arrival_Time,Ticket_Price) values (?,?,?,?,?,?,?,?,?,?,?)");
                 pst.setString(1, Fairline);
                 pst.setString(2, Fno);
                 pst.setString(3, Fseats);
@@ -566,7 +547,7 @@ public class Flight extends javax.swing.JFrame {
                 pst.setString(8, Fsource2);
                 pst.setString(9, date2);
                 pst.setString(10, arvltime);
-                pst.setString(11, combinedPriceData.toString());
+                pst.setString(11, combinedpriceData);
                 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(this,"Flight Added.");
@@ -577,10 +558,10 @@ public class Flight extends javax.swing.JFrame {
                 Ebox.setSelected(false);
                 Bbox.setSelected(false);
                 Fbox.setSelected(false);
-                sourcebox.setSelectedIndex(-1);
+                sourcebox.setSelectedIndex(0);
                 jDateChooser1.setDate(null);
                 Dtime.setText("");
-                destinybox.setSelectedIndex(-1);
+                destinybox.setSelectedIndex(0);
                 jDateChooser2.setDate(null);
                 Atime.setText("");
                 tpe.setText("");            
@@ -599,234 +580,6 @@ public class Flight extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_addActionPerformed
-
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        DefaultTableModel d1 = (DefaultTableModel)jTable1.getModel();
-        int selectindex = jTable1.getSelectedRow();
-           
-        // Check if a valid row is selected
-        if (selectindex >= 0) {
-            
-            airline.setText(d1.getValueAt(selectindex, 1).toString());            
-            F_no.setText(d1.getValueAt(selectindex, 2).toString());
-            seats.setText(d1.getValueAt(selectindex, 3).toString());
-            // Get the seat type data from the selected row
-            String seatTypeData = d1.getValueAt(selectindex, 4).toString(); // Assuming seat type data is in column 4
-            sourcebox.setSelectedItem(d1.getValueAt(selectindex, 5).toString());
-            // Get the date value from the selected row
-            String departureDateStr = d1.getValueAt(selectindex, 6).toString(); // Assuming the departure date is in the 6th column
-            Dtime.setText(d1.getValueAt(selectindex, 7).toString());
-            destinybox.setSelectedItem(d1.getValueAt(selectindex, 8).toString());
-            String arrivalDateStr = d1.getValueAt(selectindex, 9).toString(); // Assuming the arrival date is in the 9th column
-            Atime.setText(d1.getValueAt(selectindex, 10).toString());
-            String priceValues = d1.getValueAt(selectindex, 11).toString(); // Assuming the price values are in the 14th column
-            
-            // Split the seat type data
-            String[] seatTypes = seatTypeData.split(", ");
-            String[] priceValueArray = priceValues.split(", "); // Split the price values
-
-            // Set checkbox states based on the seat types
-            Ebox.setSelected(false);
-            Bbox.setSelected(false);
-            Fbox.setSelected(false);
-
-            for (String seatType : seatTypes) {
-                if (seatType.equals("Economy Class")) {
-                    Ebox.setSelected(true);
-                } else if (seatType.equals("Business Class")) {
-                    Bbox.setSelected(true);
-                } else if (seatType.equals("First Class")) {
-                    Fbox.setSelected(true);
-                }
-            }
-            
-            // Disable/Enable price fields based on checkbox selection
-            tpe.setEnabled(Ebox.isSelected());
-            tpb.setEnabled(Bbox.isSelected());
-            tpf.setEnabled(Fbox.isSelected());
-
-            // Retrieve and set price values
-            if (Ebox.isSelected()) {
-                tpe.setText(priceValueArray[0]); // First value in the array
-            }
-            if (Bbox.isSelected()) {
-                tpb.setText(priceValueArray[1]); // 2nd value in the array
-            }
-            if (Fbox.isSelected()) {
-                tpf.setText(priceValueArray[2]); // 3rd value in the array
-            }
-            
-            try {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-                Date departureDate = dateFormat.parse(departureDateStr);
-                Date arrivalDate = dateFormat.parse(arrivalDateStr);
-
-                // Use the parsed dates as needed
-                jDateChooser1.setDate(departureDate);
-                jDateChooser2.setDate(arrivalDate);
-                
-            } catch (ParseException ex) {
-                Logger.getLogger(Flight.class.getName()).log(Level.SEVERE, null, ex);
-            }               
-        } 
-    }//GEN-LAST:event_jTable1MouseClicked
-
-    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
-        //Delete Button
-        DefaultTableModel d1 = (DefaultTableModel)jTable1.getModel();
-        int selectIndex = jTable1.getSelectedRow();
-        
-        try {
- 
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection(jdbcUrl, user, dbpassword);
-            
-            String Fairline = d1.getValueAt(selectIndex, 1).toString(); 
-            int dialogResult = JOptionPane.showConfirmDialog(this," Do you want to delete?", "Warning!",JOptionPane.YES_NO_OPTION );
-        
-            if (dialogResult == JOptionPane.YES_OPTION)
-            {
-                pst = con.prepareStatement("delete from flight where Airline = ?");
-                pst.setString(1, Fairline);
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(this,"Flight Deleted.");
-                
-                airline.setText("");            
-                F_no.setText("");
-                seats.setText("");
-                Ebox.setSelected(false);
-                Bbox.setSelected(false);
-                Fbox.setSelected(false);
-                sourcebox.setSelectedIndex(-1);
-                jDateChooser1.setDate(null);
-                Dtime.setText("");
-                destinybox.setSelectedIndex(-1);
-                jDateChooser2.setDate(null);
-                Atime.setText("");
-                tpe.setText("");            
-                tpb.setText("");
-                tpf.setText("");
-                
-                airline.requestFocus();
-                table_update();
-                
-            }
-            con.close(); 
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Flight.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Flight.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_deleteActionPerformed
-
-    private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
-        //Edit Button
-        DefaultTableModel d1 = (DefaultTableModel)jTable1.getModel();
-        int selectIndex = jTable1.getSelectedRow();
-        
-        String Fairline = airline.getText();
-        String Fno = F_no.getText();        
-        String Fseats = seats.getText();
-        // Get the state of each checkbox
-        boolean economyChecked = Ebox.isSelected();
-        boolean businessChecked = Bbox.isSelected();
-        boolean firstClassChecked = Fbox.isSelected();
-
-        String ETicprice = tpe.getText();
-        String BTicprice = tpb.getText();
-        String FTicprice = tpf.getText();
-        
-        // Initialize a StringBuilder to build the combined data string
-        StringBuilder combinedSeatTypeData = new StringBuilder();
-        StringBuilder combinedPriceData = new StringBuilder();
-
-        // Add selected seat types to the combined data string
-        if (economyChecked) {
-            combinedSeatTypeData.append("Economy Class");
-            combinedPriceData.append(ETicprice);
-        }
-
-        if (businessChecked) {
-            if (combinedSeatTypeData.length() > 0) {
-                combinedSeatTypeData.append(", ");
-                combinedPriceData.append(", ");
-            }
-                combinedSeatTypeData.append("Business Class");
-                combinedPriceData.append(BTicprice);
-        }
-
-        if (firstClassChecked) {
-            if (combinedSeatTypeData.length() > 0) {
-                combinedSeatTypeData.append(", ");
-                combinedPriceData.append(", ");
-            }
-            combinedSeatTypeData.append("First Class");
-            combinedPriceData.append(FTicprice);
-        }
-
-        String Fsource = sourcebox.getSelectedItem() != null ? sourcebox.getSelectedItem().toString() : null;
-        //departure date declared
-        String date = jDateChooser1.getDate() != null ? new SimpleDateFormat ("yyyy/MM/dd").format(jDateChooser1.getDate()) : null;
-        String Dptime = Dtime.getText();
-        String Fsource2 = destinybox.getSelectedItem() != null ? destinybox.getSelectedItem().toString() : null;
-        //arrival date declared
-        String date2 = jDateChooser2.getDate() != null ? new SimpleDateFormat ("yyyy/MM/dd").format(jDateChooser2.getDate()) : null;
-        String arvltime = Atime.getText();
-        
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection(jdbcUrl, user, dbpassword);
-            
-            if (Fairline.equals("")||Fno.equals("")||Fseats.equals("")||Fsource == null ||date == null ||Dptime.isEmpty()||Fsource2 == null||date2 == null||arvltime.equals("")||(Ebox.isSelected() && ETicprice.isEmpty()) ||(Bbox.isSelected() && BTicprice.isEmpty()) || (Fbox.isSelected() && FTicprice.isEmpty())) 
-            {
-                JOptionPane.showMessageDialog(this, "Some Fields are empty or not selected");   
-            }
-            else
-            {
-                pst = con.prepareStatement("update flight set Airline = ?, No_of_Seats = ?, Seat_Type = ?, Source = ?, Departure_Date = ?, Departure_Time = ?, Destination = ?, Arrival_Date = ?, Arrival_Time = ?, Ticket_Price = ? where Flight_No = ?");
-                pst.setString(1, Fairline);
-                pst.setString(2, Fseats);
-                // Set the combined seat type data
-                pst.setString(3, combinedSeatTypeData.toString());
-                pst.setString(4, Fsource);
-                pst.setString(5, date);
-                pst.setString(6, Dptime);
-                pst.setString(7, Fsource2);
-                pst.setString(8, date2);
-                pst.setString(9, arvltime);
-                pst.setString(10, combinedPriceData.toString());
-                pst.setString(11, Fno);
-                
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(this,"Record Added.");
-            
-                airline.setText("");            
-                F_no.setText("");
-                seats.setText("");
-                Ebox.setSelected(false);
-                Bbox.setSelected(false);
-                Fbox.setSelected(false);
-                sourcebox.setSelectedIndex(-1);
-                jDateChooser1.setDate(null);
-                Dtime.setText("");
-                destinybox.setSelectedIndex(-1);
-                jDateChooser2.setDate(null);
-                Atime.setText("");
-                tpe.setText("");            
-                tpb.setText("");
-                tpf.setText("");
-                
-                airline.requestFocus();
-                table_update();
-            }
-            con.close(); 
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Flight.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Flight.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }//GEN-LAST:event_editActionPerformed
 
     /**
      * @param args the command line arguments
