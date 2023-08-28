@@ -798,7 +798,7 @@ public class Flight extends javax.swing.JFrame {
                 pst.setString(11, Fno);
                 
                 pst.executeUpdate();
-                JOptionPane.showMessageDialog(this,"Record Added.");
+                JOptionPane.showMessageDialog(this,"Record Edited.");
             
                 airline.setText("");            
                 F_no.setText("");
