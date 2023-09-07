@@ -307,27 +307,10 @@
         <Component class="javax.swing.JComboBox" name="sourcebox">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="17">
-                <StringItem index="0" value="Colombo - Sri Lanka"/>
-                <StringItem index="1" value="Sydney - Australia"/>
-                <StringItem index="2" value="Melbourne - Australia"/>
-                <StringItem index="3" value="Hong Kong - China"/>
-                <StringItem index="4" value="Tokyo - China"/>
-                <StringItem index="5" value="Osaka - China"/>
-                <StringItem index="6" value="Lahore - Pakistan"/>
-                <StringItem index="7" value="Karachi - Pakistan"/>
-                <StringItem index="8" value="Chennai - India"/>
-                <StringItem index="9" value="Delhi - India"/>
-                <StringItem index="10" value="Bangalore - India"/>
-                <StringItem index="11" value="Singapore - Singapore"/>
-                <StringItem index="12" value="Kuala Lamoure - Malaysia"/>
-                <StringItem index="13" value="Bangkok - Thailand"/>
-                <StringItem index="14" value="Male - Maldives"/>
-                <StringItem index="15" value="Dhaka - Bangladesh"/>
-                <StringItem index="16" value="Auckland - New Zealand"/>
+              <StringArray count="1">
+                <StringItem index="0" value="Colombo"/>
               </StringArray>
             </Property>
-            <Property name="selectedIndex" type="int" value="-1"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sourceboxActionPerformed"/>

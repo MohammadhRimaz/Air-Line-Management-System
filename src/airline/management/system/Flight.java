@@ -159,8 +159,7 @@ public class Flight extends javax.swing.JFrame {
         destinybox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chennai - India", "Delhi - India", "Bangalore - India", "Colombo - Sri Lanka", "Sydney - Australia", "Melbourne - Australia", "Hong Kong - China", "Tokyo - China", "Osaka - China", "Lahore - Pakistan", "Karachi - Pakistan", "Singapore - Singapore", "Kuala Lamoure - Malaysia", "Bangkok - Thailand", "Male - Maldives", "Dhaka - Bangladesh", "Auckland - New Zealand" }));
         destinybox.setSelectedIndex(-1);
 
-        sourcebox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Colombo - Sri Lanka", "Sydney - Australia", "Melbourne - Australia", "Hong Kong - China", "Tokyo - China", "Osaka - China", "Lahore - Pakistan", "Karachi - Pakistan", "Chennai - India", "Delhi - India", "Bangalore - India", "Singapore - Singapore", "Kuala Lamoure - Malaysia", "Bangkok - Thailand", "Male - Maldives", "Dhaka - Bangladesh", "Auckland - New Zealand" }));
-        sourcebox.setSelectedIndex(-1);
+        sourcebox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Colombo" }));
         sourcebox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sourceboxActionPerformed(evt);
