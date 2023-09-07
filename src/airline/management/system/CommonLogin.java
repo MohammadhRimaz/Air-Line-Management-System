@@ -66,6 +66,7 @@ public class CommonLogin extends javax.swing.JFrame {
             }
         });
 
+        staff.setFont(new java.awt.Font("Impact", 0, 11)); // NOI18N
         staff.setText("Staff");
         staff.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
