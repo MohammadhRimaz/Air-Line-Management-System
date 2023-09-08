@@ -86,6 +86,9 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="admin">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="12" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Admin"/>
           </Properties>
           <Events>
@@ -95,6 +98,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="exit">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="12" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Exit"/>
           </Properties>
           <Events>
@@ -104,6 +110,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="staff">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="12" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Staff"/>
           </Properties>
           <Events>

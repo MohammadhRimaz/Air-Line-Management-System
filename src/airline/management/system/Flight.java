@@ -39,6 +39,7 @@ public class Flight extends javax.swing.JFrame {
         tpe.setEnabled(false);
         tpb.setEnabled(false);
         tpf.setEnabled(false);
+        table_update();
     }
     
     Connection con;

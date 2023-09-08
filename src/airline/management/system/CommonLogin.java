@@ -41,6 +41,7 @@ public class CommonLogin extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
 
+        admin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         admin.setText("Admin");
         admin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,6 +54,7 @@ public class CommonLogin extends javax.swing.JFrame {
             }
         });
 
+        exit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         exit.setText("Exit");
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,6 +67,7 @@ public class CommonLogin extends javax.swing.JFrame {
             }
         });
 
+        staff.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         staff.setText("Staff");
         staff.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
