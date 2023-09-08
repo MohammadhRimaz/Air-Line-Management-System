@@ -126,33 +126,12 @@ public class TicketBooking extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel2.setText("Customer Name");
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "S1", "S2", "S3", "S4", "S5", "S6", "S7", "S8", "F1", "F2", "F3", "F4", "C1", "C2", "C3", "C4" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setText("Flight Code");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
-
-        jLabel3.setText("Gender");
-
-        jLabel5.setText("Passport No.");
-
-        jButton5.setText("Reset");
-
-        jButton4.setText("Book");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        book.setText("Book");
+        book.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-
-        jLabel7.setText("Booking");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
