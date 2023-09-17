@@ -176,7 +176,7 @@ public class TicketBooking extends javax.swing.JFrame {
                 }
                 df.addRow(v2);
             }
-            con.close();
+           
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(TicketBooking.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -743,8 +743,8 @@ public class TicketBooking extends javax.swing.JFrame {
             
                 //For making all text fields empty...
                 cusidbox.setSelectedIndex(-1);
-                flightnobox.setSelectedItem(-1);
-                seattypebox.setSelectedItem(-1);     
+                flightnobox.setSelectedIndex(-1);
+                seattypebox.setSelectedIndex(-1);     
                 cusname.setText("");
                 psprt.setText("");
                 nationality.setText("");
@@ -835,6 +835,7 @@ public class TicketBooking extends javax.swing.JFrame {
                 {
                     JOptionPane.showMessageDialog(this, "Flight Not Found");
                 }
+                
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(TicketBooking.class.getName()).log(Level.SEVERE, null, ex);
             } catch (SQLException ex) {

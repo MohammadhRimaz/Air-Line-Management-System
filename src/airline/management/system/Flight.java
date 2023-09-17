@@ -156,10 +156,11 @@ public class Flight extends javax.swing.JFrame {
 
         jLabel6.setText("No. of Seats");
 
-        destinybox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chennai - India", "Delhi - India", "Bangalore - India", "Colombo - Sri Lanka", "Sydney - Australia", "Melbourne - Australia", "Hong Kong - China", "Tokyo - China", "Osaka - China", "Lahore - Pakistan", "Karachi - Pakistan", "Singapore - Singapore", "Kuala Lamoure - Malaysia", "Bangkok - Thailand", "Male - Maldives", "Dhaka - Bangladesh", "Auckland - New Zealand" }));
+        destinybox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chennai - India", "Colombo - Sri Lanka", "Delhi - India", "Bangalore - India", "Sydney - Australia", "Melbourne - Australia", "Hong Kong - China", "Tokyo - China", "Osaka - China", "Lahore - Pakistan", "Karachi - Pakistan", "Doha - Qatar", "Dubai - UAE", "Singapore - Singapore", "Riyadh - Saudhi Arabia", "Kuala Lamoure - Malaysia", "Bangkok - Thailand", "Male - Maldives", "Dhaka - Bangladesh", "Auckland - New Zealand" }));
         destinybox.setSelectedIndex(-1);
 
-        sourcebox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Colombo" }));
+        sourcebox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Colombo - Sri Lanka", "Chennai - India", "Delhi - India", "Bangalore - India", "Sydney - Australia", "Melbourne - Australia", "Hong Kong - China", "Tokyo - China", "Osaka - China", "Lahore - Pakistan", "Karachi - Pakistan", "Doha - Qatar", "Dubai - UAE", "Singapore - Singapore", "Riyadh - Saudhi Arabia", "Kuala Lamoure - Malaysia", "Bangkok - Thailand", "Male - Maldives", "Dhaka - Bangladesh", "Auckland - New Zealand" }));
+        sourcebox.setSelectedIndex(-1);
         sourcebox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sourceboxActionPerformed(evt);

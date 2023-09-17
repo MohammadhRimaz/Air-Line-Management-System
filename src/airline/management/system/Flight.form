@@ -278,11 +278,11 @@
         <Component class="javax.swing.JComboBox" name="destinybox">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="17">
+              <StringArray count="20">
                 <StringItem index="0" value="Chennai - India"/>
-                <StringItem index="1" value="Delhi - India"/>
-                <StringItem index="2" value="Bangalore - India"/>
-                <StringItem index="3" value="Colombo - Sri Lanka"/>
+                <StringItem index="1" value="Colombo - Sri Lanka"/>
+                <StringItem index="2" value="Delhi - India"/>
+                <StringItem index="3" value="Bangalore - India"/>
                 <StringItem index="4" value="Sydney - Australia"/>
                 <StringItem index="5" value="Melbourne - Australia"/>
                 <StringItem index="6" value="Hong Kong - China"/>
@@ -290,12 +290,15 @@
                 <StringItem index="8" value="Osaka - China"/>
                 <StringItem index="9" value="Lahore - Pakistan"/>
                 <StringItem index="10" value="Karachi - Pakistan"/>
-                <StringItem index="11" value="Singapore - Singapore"/>
-                <StringItem index="12" value="Kuala Lamoure - Malaysia"/>
-                <StringItem index="13" value="Bangkok - Thailand"/>
-                <StringItem index="14" value="Male - Maldives"/>
-                <StringItem index="15" value="Dhaka - Bangladesh"/>
-                <StringItem index="16" value="Auckland - New Zealand"/>
+                <StringItem index="11" value="Doha - Qatar"/>
+                <StringItem index="12" value="Dubai - UAE"/>
+                <StringItem index="13" value="Singapore - Singapore"/>
+                <StringItem index="14" value="Riyadh - Saudhi Arabia"/>
+                <StringItem index="15" value="Kuala Lamoure - Malaysia"/>
+                <StringItem index="16" value="Bangkok - Thailand"/>
+                <StringItem index="17" value="Male - Maldives"/>
+                <StringItem index="18" value="Dhaka - Bangladesh"/>
+                <StringItem index="19" value="Auckland - New Zealand"/>
               </StringArray>
             </Property>
             <Property name="selectedIndex" type="int" value="-1"/>
@@ -307,10 +310,30 @@
         <Component class="javax.swing.JComboBox" name="sourcebox">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="1">
-                <StringItem index="0" value="Colombo"/>
+              <StringArray count="20">
+                <StringItem index="0" value="Colombo - Sri Lanka"/>
+                <StringItem index="1" value="Chennai - India"/>
+                <StringItem index="2" value="Delhi - India"/>
+                <StringItem index="3" value="Bangalore - India"/>
+                <StringItem index="4" value="Sydney - Australia"/>
+                <StringItem index="5" value="Melbourne - Australia"/>
+                <StringItem index="6" value="Hong Kong - China"/>
+                <StringItem index="7" value="Tokyo - China"/>
+                <StringItem index="8" value="Osaka - China"/>
+                <StringItem index="9" value="Lahore - Pakistan"/>
+                <StringItem index="10" value="Karachi - Pakistan"/>
+                <StringItem index="11" value="Doha - Qatar"/>
+                <StringItem index="12" value="Dubai - UAE"/>
+                <StringItem index="13" value="Singapore - Singapore"/>
+                <StringItem index="14" value="Riyadh - Saudhi Arabia"/>
+                <StringItem index="15" value="Kuala Lamoure - Malaysia"/>
+                <StringItem index="16" value="Bangkok - Thailand"/>
+                <StringItem index="17" value="Male - Maldives"/>
+                <StringItem index="18" value="Dhaka - Bangladesh"/>
+                <StringItem index="19" value="Auckland - New Zealand"/>
               </StringArray>
             </Property>
+            <Property name="selectedIndex" type="int" value="-1"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sourceboxActionPerformed"/>
