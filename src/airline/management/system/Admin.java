@@ -102,6 +102,11 @@ public class Admin extends javax.swing.JFrame {
 
         jLabel2.setText("Password");
 
+        pswrd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pswrdActionPerformed(evt);
+            }
+        });
         pswrd.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 pswrdKeyPressed(evt);
@@ -109,6 +114,7 @@ public class Admin extends javax.swing.JFrame {
         });
 
         login.setText("Login");
+        login.setName(""); // NOI18N
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginActionPerformed(evt);
@@ -129,6 +135,11 @@ public class Admin extends javax.swing.JFrame {
             }
         });
 
+        uname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                unameActionPerformed(evt);
+            }
+        });
         uname.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 unameKeyPressed(evt);
@@ -152,9 +163,8 @@ public class Admin extends javax.swing.JFrame {
                         .addComponent(clear)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                         .addComponent(jButton3))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(pswrd)
-                        .addComponent(uname, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)))
+                    .addComponent(pswrd)
+                    .addComponent(uname, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -256,6 +266,14 @@ public class Admin extends javax.swing.JFrame {
             uname.requestFocus();
         }
     }//GEN-LAST:event_pswrdKeyPressed
+
+    private void unameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_unameActionPerformed
+
+    private void pswrdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pswrdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pswrdActionPerformed
 
     /**
      * @param args the command line arguments
