@@ -50,7 +50,6 @@ public class Customer extends javax.swing.JFrame {
             con = DriverManager.getConnection(jdbcUrl, user, dbpassword);
             
             Statement s = con.createStatement();
-            
             ResultSet rs = s.executeQuery("select Max(Cus_ID) from customer");
             rs.next();
             rs.getString("Max(Cus_ID)");

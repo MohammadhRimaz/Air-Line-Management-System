@@ -39,9 +39,10 @@ public class TicketBooking extends javax.swing.JFrame {
     Connection con;
     ResultSet rs;
     ResultSet rs1;
+    ResultSet rs2;
+    PreparedStatement pst2= null;
     PreparedStatement pst= null;
     PreparedStatement pst1=null;
-    PreparedStatement pst2=null;
 
     
     public TicketBooking(String sourcePage) {
@@ -50,7 +51,7 @@ public class TicketBooking extends javax.swing.JFrame {
         table_update();
         LoadCusID();
         Loadflightno();
-        autoID();
+        autoID();       
         
         //For making all text fields empty...
         cusidbox.setSelectedIndex(-1);
@@ -332,11 +333,6 @@ public class TicketBooking extends javax.swing.JFrame {
         jLabel18.setText("Discount Price");
 
         cusname.setEditable(false);
-        cusname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cusnameActionPerformed(evt);
-            }
-        });
 
         psprt.setEditable(false);
 
@@ -359,6 +355,8 @@ public class TicketBooking extends javax.swing.JFrame {
         Atime.setEditable(false);
 
         ticPrice.setEditable(false);
+
+        DPrice.setEditable(false);
 
         flightnobox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -554,8 +552,7 @@ public class TicketBooking extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    
+     
      public void autoID()
     {
         try {
@@ -619,7 +616,8 @@ public class TicketBooking extends javax.swing.JFrame {
             
             while (rs.next())
                 {
-                    flightnobox.addItem(rs.getString(3));
+                    String flightNumber = rs.getString("Flight_No");
+                    flightnobox.addItem(flightNumber);
                 }        
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(TicketBooking.class.getName()).log(Level.SEVERE, null, ex);
@@ -627,7 +625,7 @@ public class TicketBooking extends javax.swing.JFrame {
             Logger.getLogger(TicketBooking.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         // For back Button
         this.dispose(); // Close the current page
@@ -640,10 +638,6 @@ public class TicketBooking extends javax.swing.JFrame {
             staffPage.setVisible(true);
         }
     }//GEN-LAST:event_backActionPerformed
-
-    private void cusnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cusnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cusnameActionPerformed
 
     private void cusidboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cusidboxActionPerformed
         //when a cus id clicked then particular customer's details will be display in next text fields.. 
@@ -701,25 +695,33 @@ public class TicketBooking extends javax.swing.JFrame {
         String Stype = seattypebox.getSelectedItem().toString();
         String Tprice = ticPrice.getText();
         String dis = discount.getText();
-        String DisP = DPrice.getText();
-
-        // Decrease the available seats by one
-        int currentAvailableSeats = Integer.parseInt(available.getText());
-        currentAvailableSeats--;
-
-        // Update the "Available Seats" field
-        available.setText(String.valueOf(currentAvailableSeats));
-        
+        String DisP = DPrice.getText(); 
+        int totalSeats = Integer.parseInt(available.getText()); // Total available seats
+   
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(jdbcUrl,user,dbpassword);
             
-            if (dis.equals("")||DisP.equals("")||Bdate == null)
+            if (dis.equals("")||Bdate == null)
             {
                 JOptionPane.showMessageDialog(this, "Some Fields are empty");   
             }
             else
             {
+                // Calculate new available seats after booking
+                int newAvailableSeats = totalSeats - 1;
+
+                // Update available seats and ticket booking
+                PreparedStatement updateAvailableSeats = con.prepareStatement("UPDATE flight SET Available_Seats = ? WHERE Flight_No = ?");
+                updateAvailableSeats.setInt(1, newAvailableSeats);
+                updateAvailableSeats.setString(2, Fno);
+                updateAvailableSeats.executeUpdate();
+                
+                 // Increment booked seats count
+                PreparedStatement incrementBookedSeats = con.prepareStatement("UPDATE flight SET Booked_Seats = Booked_Seats + 1 WHERE Flight_No = ?");
+                incrementBookedSeats.setString(1, Fno);
+                incrementBookedSeats.executeUpdate();
+                
                 pst = con.prepareStatement("insert into ticket_booking(Tic_ID,Booking_Date,Cus_ID,Customer_Name,Nationality,Passport_No,Flight_No,Source,Departure_Date,Departure_Time,Destination,Arrival_Date,Arrival_Time,Seat_Type,Ticket_Price,Discount,Discount_Price) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
                 pst.setString(1, tid);
                 pst.setString(2, Bdate);
@@ -768,10 +770,22 @@ public class TicketBooking extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(TicketBooking.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    
+    private int getBookedSeats(String flightNumber) {
+    try {
+        pst2 = con.prepareStatement("SELECT COUNT(*) AS Booked_Seats FROM ticket_booking WHERE Flight_No = ?");
+        pst2.setString(1, flightNumber);
+        rs2 = pst2.executeQuery();
+
+        if (rs2.next()) {
+            return rs2.getInt("Booked_Seats");
+        }
+    } catch (SQLException ex) {
+        Logger.getLogger(TicketBooking.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    return 0;
+}
     
     private void flightnoboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flightnoboxActionPerformed
         //when a flight_no clicked then that flight details will appear in next text fields
@@ -782,9 +796,9 @@ public class TicketBooking extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 con = DriverManager.getConnection(jdbcUrl,user,dbpassword);
-                pst2 = con.prepareStatement("select * from flight where Flight_No = ?");
-                pst2.setString(1, flightNumber);
-                rs1 = pst2.executeQuery();
+                pst1 = con.prepareStatement("select * from flight where Flight_No = ?");
+                pst1.setString(1, flightNumber);
+                rs1 = pst1.executeQuery();
               
                 if (rs1.next()) 
                 {
@@ -797,9 +811,13 @@ public class TicketBooking extends javax.swing.JFrame {
                     String arvlDate = rs1.getString("Arrival_Date");
                     String arvlTime = rs1.getString("Arrival_Time");
                     String ticprice = rs1.getString("Ticket_Price");
-                    // Retrieve the initial number of available seats
-                    int initialAvailableSeats = rs1.getInt("No_of_Seats");
- 
+                    int totalSeats = rs1.getInt("No_of_Seats");
+                    
+                    int bookedSeats = getBookedSeats(flightNumber); // Calculate booked seats
+                    // Calculate and display available seats
+                    int availableSeats = totalSeats - bookedSeats;
+                    available.setText(String.valueOf(availableSeats));
+                    
                     // Populate the text fields with retrieved information
                     source.setText(srce);
                     Ddate.setText(dprtrDate);
@@ -807,8 +825,7 @@ public class TicketBooking extends javax.swing.JFrame {
                     destination.setText(dstntn);
                     Adate.setText(arvlDate);
                     Atime.setText(arvlTime);
-                    available.setText(String.valueOf(initialAvailableSeats));
-                
+   
                     // Fetch and populate seat types in the combo box
                     String[] seatTypeArray = seatTypes.split(","); // Assuming seat types are separated by commas
                     seattypebox.removeAllItems(); // Clear existing items
