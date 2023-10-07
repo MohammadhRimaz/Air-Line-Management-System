@@ -143,7 +143,7 @@ public class Admin extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("PASSWORD");
 
-        login.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        login.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         login.setText("LOGIN");
         login.setName(""); // NOI18N
         login.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +152,7 @@ public class Admin extends javax.swing.JFrame {
             }
         });
 
-        clear.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        clear.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         clear.setText("CLEAR");
         clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,7 +160,7 @@ public class Admin extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         jButton3.setText("BACK");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,7 +168,7 @@ public class Admin extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("ADMIN LOGIN");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -197,7 +197,7 @@ public class Admin extends javax.swing.JFrame {
                             .addComponent(uname, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(28, 28, 28))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(131, 131, 131)
+                .addGap(118, 118, 118)
                 .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
