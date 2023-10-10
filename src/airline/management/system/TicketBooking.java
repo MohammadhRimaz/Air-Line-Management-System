@@ -575,7 +575,7 @@ public class TicketBooking extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
-        jLabel21.setIcon(new javax.swing.ImageIcon("D:\\UOWSL\\Group Project\\WIndows Form Application Images\\Ticket booking.jpg")); // NOI18N
+        jLabel21.setIcon(new javax.swing.ImageIcon("C:\\Users\\moham\\Documents\\NetBeansProjects\\New Folder\\DSE-113-Project\\Images\\Ticket booking.jpg")); // NOI18N
         getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1220, 570));
 
         pack();
