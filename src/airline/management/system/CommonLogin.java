@@ -116,7 +116,7 @@ public class CommonLogin extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 230, 240));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\moham\\Documents\\NetBeansProjects\\New Folder\\DSE-113-Project\\Images\\Common login page.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Common login page.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 340));
 
         pack();
