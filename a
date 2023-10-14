@@ -1,0 +1,230 @@
+[33mcommit f8699a3251722fe9a083d06cedec68f27d5bbd09[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Mufees <moham@DESKTOP-0BEH8PK>
+Date:   Sat Oct 7 22:06:41 2023 +0530
+
+    Designed Ticket Cancellation page
+
+[33mcommit 82e91f738a7aea49732532d75b050e5cca1a964d[m
+Author: Mufees <moham@DESKTOP-0BEH8PK>
+Date:   Sat Oct 7 21:35:57 2023 +0530
+
+    Designed Ticket booking page
+
+[33mcommit f9d1644e9db4466a1208a3aeb5cbbfead8ba0a20[m
+Author: Mufees <moham@DESKTOP-0BEH8PK>
+Date:   Sat Oct 7 20:54:42 2023 +0530
+
+    Designed Admin menu page
+
+[33mcommit fd872e587f3a367e029326e6af5e7b7dc239b480[m
+Author: Mufees <moham@DESKTOP-0BEH8PK>
+Date:   Sat Oct 7 20:23:51 2023 +0530
+
+    Designed Common login page
+
+[33mcommit 7b7bd7e7dd8a0972855b337c31a553e1553aae6c[m
+Author: Mufees <moham@DESKTOP-0BEH8PK>
+Date:   Sat Oct 7 19:12:24 2023 +0530
+
+    Design Created for Admin Login
+
+[33mcommit 3b5bb4c2a9cb0d70d5c9dc625e9ea68792a82e96[m
+Author: MohammadhRimaz <mohammadhrimaz@gmail.com>
+Date:   Tue Oct 3 22:00:07 2023 +0530
+
+    Coded for Feedback page.
+
+[33mcommit 12ec9d5503985a968abb5fe31b09f1ee0d38a13a[m
+Author: MohammadhRimaz <mohammadhrimaz@gmail.com>
+Date:   Sat Sep 30 18:04:49 2023 +0530
+
+    Completed the Ticket Cancellation Page and Bug Fixed in Ticket Booking Page
+
+[33mcommit ed554a2f3551153a6e342ad47f764624a9dddd85[m
+Author: Ihshan <>
+Date:   Wed Sep 27 19:05:40 2023 +0530
+
+    Created Feedback Page
+
+[33mcommit d93e31b49e3711a05b63c293056c9009661489f9[m
+Author: MohammadhRimaz <mohammadhrimaz@gmail.com>
+Date:   Sun Sep 17 10:31:38 2023 +0530
+
+    Bug Fixed in Ticket Booking Page
+
+[33mcommit 460fd4711daa20762747402c3b3d6a41252bff94[m
+Author: MohammadhRimaz <mohammadhrimaz@gmail.com>
+Date:   Thu Sep 14 15:31:36 2023 +0530
+
+    Completely coded for Ticket Booking Page
+
+[33mcommit a8bd5d76ed62f013c2bb7a50410a021708c5392b[m
+Author: Fayaz087 <141487042+Fayaz087@users.noreply.github.com>
+Date:   Mon Sep 11 21:12:10 2023 +0530
+
+    Add files via upload
+
+[33mcommit 7b40998d6cc4c49b8ff711f752aa318468dce802[m
+Author: Mufees7 <141484029+Mufees7@users.noreply.github.com>
+Date:   Fri Sep 8 22:37:03 2023 +0530
+
+    Create Design
+
+[33mcommit 1adf66a13d3d9a2d139d68acb4513e14d93b7fe7[m
+Merge: dad1840 694abff
+Author: Mufees <>
+Date:   Fri Sep 8 22:32:56 2023 +0530
+
+    Font
+
+[33mcommit dad1840ed06ba2fd8e6189365e5c59e59c0718b2[m
+Author: Mufees <>
+Date:   Fri Sep 8 22:08:17 2023 +0530
+
+    Font type change
+
+[33mcommit 694abff23856fbf5058c670b29cff8907fad17fa[m
+Author: MohammadhRimaz <mohammadhrimaz@gmail.com>
+Date:   Fri Sep 8 20:16:39 2023 +0530
+
+    Modified Ticket Booking and Cancellation page and fixed some bugs
+
+[33mcommit 5818c6d78998fa09dd6abed9f13d27d5fd71a4e9[m
+Author: MohammadhRimaz <mohammadhrimaz@gmail.com>
+Date:   Fri Sep 8 19:15:39 2023 +0530
+
+    Modified Ticket Booking and Cancellation page
+
+[33mcommit 1585079906b7145bdec56202b5f8a6e35b6fe0ea[m
+Author: Ihshan <>
+Date:   Thu Sep 7 22:26:13 2023 +0530
+
+    Font Changed
+
+[33mcommit a5205d1f94771ebfe3860c49b94ba3ceeb8d1331[m
+Author: Ihshan <>
+Date:   Thu Sep 7 22:13:54 2023 +0530
+
+    Changed Font
+
+[33mcommit b00a7f8b468ffff3b49eba83dd615e23fd8ca694[m
+Author: MohammadhRimaz <mohammadhrimaz@gmail.com>
+Date:   Mon Aug 28 17:42:19 2023 +0530
+
+    Corrected the spelling errors
+
+[33mcommit 1676157fe534e5c79de21a867670117e5426e50d[m
+Author: MohammadhRimaz <mohammadhrimaz@gmail.com>
+Date:   Mon Aug 28 16:43:18 2023 +0530
+
+    Made Some Bug fixes and Coded for Flight page Edit and Delete Buttons
+
+[33mcommit 68d14280859442cca70e557d35345524f4272c12[m
+Author: MohammadhRimaz <mohammadhrimaz@gmail.com>
+Date:   Mon Aug 28 17:04:22 2023 +0530
+
+    Revert "Made Some Bug fixes and Coded for Flight page Edit and Delete Buttons"
+    
+    This reverts commit 0a52b12db924696a3eb4fd84294e0302fc80d2e7.
+
+[33mcommit fb3550c90765104116ca5247ee672474bb04299a[m
+Author: MohammadhRimaz <mohammadhrimaz@gmail.com>
+Date:   Mon Aug 28 16:43:18 2023 +0530
+
+    Made Some Bug fixes and Coded for Flight page Edit and Delete Buttons
+
+[33mcommit 9c85c1c9ea3d59d1e0a073beac9ed2e50d31245a[m
+Author: ihshan001 <141259687+ihshan001@users.noreply.github.com>
+Date:   Sat Aug 26 22:33:07 2023 +0530
+
+    Log Form
+    
+    Log Form for Sprint
+
+[33mcommit be58eabb3d8e95312d64bb09577142fc04b7e15f[m
+Author: MohammadhRimaz <mohammadhrimaz@gmail.com>
+Date:   Fri Aug 25 20:55:56 2023 +0530
+
+    Coded for Flight page add button
+
+[33mcommit 9eeacda6e946a5b0c76121fa9bbc819dc0f907de[m
+Author: Ihshan <>
+Date:   Wed Aug 23 19:26:44 2023 +0530
+
+    Updated Flight Form
+
+[33mcommit 137ec3207c8fe3750abb0190fbbcbd89cee7fe4a[m
+Author: AL MUBDIE <AL MUBDIE@Ihshan-Ahmd>
+Date:   Wed Aug 23 19:22:21 2023 +0530
+
+    Updated Flight Form
+
+[33mcommit cdb8ba8b7dd0cdcdc13beedd5b4c9d228c2cfbab[m
+Author: MohammadhRimaz <mohammadhrimaz@gmail.com>
+Date:   Wed Aug 23 16:12:12 2023 +0530
+
+    Bug fixed in delete buttons from all pages...
+
+[33mcommit 08ecd972cc9ace652a45574cd4d4e8e333f422c0[m
+Author: MohammadhRimaz <mohammadhrimaz@gmail.com>
+Date:   Mon Aug 21 21:30:23 2023 +0530
+
+    Coded for Customer Registration page Completely and coded to some pages patch works.
+
+[33mcommit cbda968334b721b2ce34597f7d00245a84562f23[m
+Author: MohammadhRimaz <mohammadhrimaz@gmail.com>
+Date:   Fri Aug 11 15:37:48 2023 +0530
+
+    Coded for Staff Registration page 'Edit'and 'Delete' Buttons.
+
+[33mcommit 3781ad47d4342594879c048af76dfa19e960daa8[m
+Author: MohammadhRimaz <mohammadhrimaz@gmail.com>
+Date:   Thu Aug 10 21:39:19 2023 +0530
+
+    Coded for Staff login page and Staff registration "Save" Button
+
+[33mcommit 20a29c763301d88ad346b684ab25fe2b3efc243b[m
+Author: Ihshan <>
+Date:   Thu Aug 10 13:51:19 2023 +0530
+
+    Updated all Forms including;
+    Customer
+    Ticket Booking
+    Ticket Cancellation
+    Staff Registration
+    Flight Management
+
+[33mcommit 75029ce1d003bb43a1c4aa60e3e43574eca0cbd7[m
+Author: AL MUBDIE <AL MUBDIE@Ihshan-Ahmd>
+Date:   Thu Aug 10 13:35:45 2023 +0530
+
+    Updated all Forms including;
+    Customer
+    Ticket Booking
+    Ticket Cancellation
+    Staff Registration
+    Flight Management
+
+[33mcommit 82967f2cc7d66ed70a33de871773eee641a9cf00[m
+Author: ihshan001 <141259687+ihshan001@users.noreply.github.com>
+Date:   Wed Aug 9 20:48:39 2023 +0530
+
+    Presentation and Documentations
+
+[33mcommit 23640a5a2d78b3ec173e1d2a2c03003840bdd523[m
+Author: MohammadhRimaz <mohammadhrimaz@gmail.com>
+Date:   Tue Aug 8 15:07:56 2023 +0530
+
+    Added a database for admin login page
+
+[33mcommit 8d6de1be990ab57db86f89799ef73c24c58f508c[m
+Author: MohammadhRimaz <mohammadhrimaz@gmail.com>
+Date:   Sun Aug 6 11:11:16 2023 +0530
+
+    Coded to all the back buttons
+
+[33mcommit a13f5a8dddfb73ceda09bb8da11f9f8ee38789f2[m
+Author: MohammadhRimaz <mohammadhrimaz@gmail.com>
+Date:   Sun Aug 6 10:39:27 2023 +0530
+
+    First Commit

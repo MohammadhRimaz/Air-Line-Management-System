@@ -38,11 +38,13 @@ public class CommonLogin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0, 90));
 
-        admin.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        admin.setBackground(new java.awt.Color(0, 51, 51));
+        admin.setFont(new java.awt.Font("DialogInput", 0, 14)); // NOI18N
         admin.setText("ADMIN");
         admin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,7 +57,8 @@ public class CommonLogin extends javax.swing.JFrame {
             }
         });
 
-        staff.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        staff.setBackground(new java.awt.Color(0, 51, 51));
+        staff.setFont(new java.awt.Font("DialogInput", 0, 14)); // NOI18N
         staff.setText("STAFF");
         staff.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,8 +71,8 @@ public class CommonLogin extends javax.swing.JFrame {
             }
         });
 
-        exit.setBackground(new java.awt.Color(153, 0, 0));
-        exit.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        exit.setBackground(new java.awt.Color(107, 13, 13));
+        exit.setFont(new java.awt.Font("DialogInput", 0, 14)); // NOI18N
         exit.setText("EXIT");
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,41 +86,48 @@ public class CommonLogin extends javax.swing.JFrame {
         });
 
         jLabel1.setBackground(new java.awt.Color(0, 204, 204));
-        jLabel1.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Gill Sans Ultra Bold Condensed", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("COMMON LOGIN");
+        jLabel1.setText("LOGIN");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(42, 42, 42)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(admin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(staff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1))
-                .addContainerGap(38, Short.MAX_VALUE))
+                    .addComponent(admin, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(staff, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
+
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {admin, exit, staff});
+
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(admin, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(staff, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addGap(18, 18, 18)
+                .addComponent(admin)
+                .addGap(30, 30, 30)
+                .addComponent(staff)
+                .addGap(30, 30, 30)
                 .addComponent(exit)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 230, 240));
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {admin, exit, staff});
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Common login page.jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 340));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 230, 250));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Common Login.jpg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 340));
 
         pack();
         setLocationRelativeTo(null);
@@ -147,7 +157,7 @@ public class CommonLogin extends javax.swing.JFrame {
             this.hide();
             C.setVisible(true);
         }
-        if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
+        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             staff.requestFocus();
         }
     }//GEN-LAST:event_adminKeyPressed
@@ -158,10 +168,10 @@ public class CommonLogin extends javax.swing.JFrame {
             this.hide();
             C.setVisible(true);
         }
-        if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
             admin.requestFocus();
         }
-        if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
+        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             exit.requestFocus();
         }
     }//GEN-LAST:event_staffKeyPressed
@@ -171,7 +181,7 @@ public class CommonLogin extends javax.swing.JFrame {
             WindowEvent closewindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
             Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closewindow);
         }
-        if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
             staff.requestFocus();
         }
     }//GEN-LAST:event_exitKeyPressed

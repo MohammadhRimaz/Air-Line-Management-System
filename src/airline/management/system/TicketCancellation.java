@@ -151,7 +151,8 @@ public class TicketCancellation extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0, 95));
 
-        back.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        back.setBackground(new java.awt.Color(0, 102, 102));
+        back.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         back.setText("BACK");
         back.setToolTipText("");
         back.addActionListener(new java.awt.event.ActionListener() {
@@ -160,15 +161,15 @@ public class TicketCancellation extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("CUSTOMER ID");
 
-        jLabel1.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Gill Sans Ultra Bold Condensed", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("TICKET CANCELLATION");
 
-        cancel.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        cancel.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         cancel.setText("CANCEL");
         cancel.setToolTipText("");
         cancel.addActionListener(new java.awt.event.ActionListener() {
@@ -199,71 +200,91 @@ public class TicketCancellation extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         cusname.setEditable(false);
+        cusname.setBackground(new java.awt.Color(255, 255, 153));
+        cusname.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel2.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("CUSTOMER NAME");
 
-        jLabel3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("PASSPORT NO.");
 
         psprt.setEditable(false);
+        psprt.setBackground(new java.awt.Color(255, 255, 153));
+        psprt.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel6.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("FLIGHT NO.");
 
-        jLabel7.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("SOURCE");
 
-        jLabel8.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("DEPARTURE DATE");
 
-        jLabel9.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("DEPARTURE TIME");
 
         source.setEditable(false);
+        source.setBackground(new java.awt.Color(255, 255, 153));
+        source.setForeground(new java.awt.Color(0, 0, 0));
 
         Ddate.setEditable(false);
+        Ddate.setBackground(new java.awt.Color(255, 255, 153));
+        Ddate.setForeground(new java.awt.Color(0, 0, 0));
 
         Dtime.setEditable(false);
+        Dtime.setBackground(new java.awt.Color(255, 255, 153));
+        Dtime.setForeground(new java.awt.Color(0, 0, 0));
 
         Atime.setEditable(false);
+        Atime.setBackground(new java.awt.Color(255, 255, 153));
+        Atime.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel10.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("ARRIVAL TIME");
 
-        jLabel11.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("DESTINATION");
 
         destination.setEditable(false);
+        destination.setBackground(new java.awt.Color(255, 255, 153));
+        destination.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel12.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("ARRIVAL DATE");
 
         Adate.setEditable(false);
+        Adate.setBackground(new java.awt.Color(255, 255, 153));
+        Adate.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel14.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("SEAT TYPE");
 
-        jLabel15.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("TICKET PRICE");
 
         ticPrice.setEditable(false);
+        ticPrice.setBackground(new java.awt.Color(255, 255, 153));
+        ticPrice.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel18.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("TICKET ID");
 
+        ticID.setBackground(new java.awt.Color(255, 255, 153));
+        ticID.setForeground(new java.awt.Color(0, 0, 0));
         ticID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ticIDActionPerformed(evt);
@@ -271,30 +292,46 @@ public class TicketCancellation extends javax.swing.JFrame {
         });
 
         seattype.setEditable(false);
+        seattype.setBackground(new java.awt.Color(255, 255, 153));
+        seattype.setForeground(new java.awt.Color(0, 0, 0));
 
         flightno.setEditable(false);
+        flightno.setBackground(new java.awt.Color(255, 255, 153));
+        flightno.setForeground(new java.awt.Color(0, 0, 0));
 
         cusid.setEditable(false);
+        cusid.setBackground(new java.awt.Color(255, 255, 153));
+        cusid.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel5.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("FINE");
 
-        jLabel16.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        fine.setBackground(new java.awt.Color(255, 255, 153));
+        fine.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel16.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("REFUND");
 
         refund.setEditable(false);
+        refund.setBackground(new java.awt.Color(255, 255, 153));
+        refund.setForeground(new java.awt.Color(0, 0, 0));
 
         bookingdate.setEditable(false);
+        bookingdate.setBackground(new java.awt.Color(255, 255, 153));
+        bookingdate.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel13.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("BOOKED DATE");
 
-        jLabel17.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("CANCEL DATE");
+
+        jDateChooser1.setBackground(new java.awt.Color(255, 255, 153));
+        jDateChooser1.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -303,47 +340,47 @@ public class TicketCancellation extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 55, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(ticID, 0, 160, Short.MAX_VALUE)
+                    .addComponent(cusid)
+                    .addComponent(cusname)
+                    .addComponent(psprt)
+                    .addComponent(flightno)
+                    .addComponent(bookingdate))
+                .addGap(43, 43, 43)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(source)
+                    .addComponent(Ddate)
+                    .addComponent(Dtime)
+                    .addComponent(seattype)
+                    .addComponent(fine)
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(47, 47, 47)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(ticID, 0, 160, Short.MAX_VALUE)
-                            .addComponent(cusid)
-                            .addComponent(cusname)
-                            .addComponent(psprt)
-                            .addComponent(flightno)
-                            .addComponent(bookingdate))
-                        .addGap(43, 43, 43)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(source)
-                            .addComponent(Ddate)
-                            .addComponent(Dtime)
-                            .addComponent(seattype)
-                            .addComponent(fine)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(47, 47, 47)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -367,6 +404,8 @@ public class TicketCancellation extends javax.swing.JFrame {
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {Adate, Atime, Ddate, Dtime, bookingdate, cusid, cusname, destination, fine, flightno, jDateChooser1, psprt, refund, seattype, source, ticID, ticPrice});
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {back, cancel});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

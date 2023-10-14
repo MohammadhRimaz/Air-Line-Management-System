@@ -40,11 +40,14 @@ public class MainMenuAdmin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0, 50));
 
-        Cus_Reg.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        Cus_Reg.setBackground(new java.awt.Color(255, 255, 153));
+        Cus_Reg.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        Cus_Reg.setForeground(new java.awt.Color(0, 0, 0));
         Cus_Reg.setText("CUSTOMER REGISTRATION");
         Cus_Reg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,7 +60,9 @@ public class MainMenuAdmin extends javax.swing.JFrame {
             }
         });
 
-        Tic_Cancel.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        Tic_Cancel.setBackground(new java.awt.Color(255, 255, 153));
+        Tic_Cancel.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        Tic_Cancel.setForeground(new java.awt.Color(0, 0, 0));
         Tic_Cancel.setText("TICKET CANCELLATION");
         Tic_Cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,7 +75,9 @@ public class MainMenuAdmin extends javax.swing.JFrame {
             }
         });
 
-        Staff_Reg.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        Staff_Reg.setBackground(new java.awt.Color(255, 255, 153));
+        Staff_Reg.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        Staff_Reg.setForeground(new java.awt.Color(0, 0, 0));
         Staff_Reg.setText("STAFF REGISTRATION");
         Staff_Reg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,7 +90,9 @@ public class MainMenuAdmin extends javax.swing.JFrame {
             }
         });
 
-        Tic_Book.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        Tic_Book.setBackground(new java.awt.Color(255, 255, 153));
+        Tic_Book.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        Tic_Book.setForeground(new java.awt.Color(0, 0, 0));
         Tic_Book.setText("TICKET BOOKING");
         Tic_Book.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,7 +105,8 @@ public class MainMenuAdmin extends javax.swing.JFrame {
             }
         });
 
-        back.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        back.setBackground(new java.awt.Color(0, 102, 102));
+        back.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         back.setText("BACK");
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,7 +119,9 @@ public class MainMenuAdmin extends javax.swing.JFrame {
             }
         });
 
-        feedback.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        feedback.setBackground(new java.awt.Color(255, 255, 153));
+        feedback.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        feedback.setForeground(new java.awt.Color(0, 0, 0));
         feedback.setText("FEEDBACK");
         feedback.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,7 +134,9 @@ public class MainMenuAdmin extends javax.swing.JFrame {
             }
         });
 
-        flight.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        flight.setBackground(new java.awt.Color(255, 255, 153));
+        flight.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        flight.setForeground(new java.awt.Color(0, 0, 0));
         flight.setText("FLIGHT");
         flight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,7 +149,7 @@ public class MainMenuAdmin extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Gill Sans Ultra Bold Condensed", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ADMIN MENU");
@@ -145,56 +159,61 @@ public class MainMenuAdmin extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(183, 183, 183))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Staff_Reg, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(Cus_Reg))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Tic_Cancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Tic_Book, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Staff_Reg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Cus_Reg)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(flight, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(feedback, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(17, 17, 17))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(162, 162, 162))))
+                            .addComponent(Tic_Book, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(flight, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(50, 50, 50)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(feedback, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Tic_Cancel))))
+                .addGap(30, 31, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(168, 168, 168))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(205, 205, 205))
         );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {Cus_Reg, Staff_Reg, Tic_Book, Tic_Cancel, back, feedback, flight});
+
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cus_Reg)
-                    .addComponent(Tic_Book))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Staff_Reg)
-                    .addComponent(Tic_Cancel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(Cus_Reg))
+                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(feedback)
-                    .addComponent(flight))
-                .addGap(18, 18, 18)
+                    .addComponent(Tic_Cancel)
+                    .addComponent(Tic_Book))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(flight)
+                    .addComponent(feedback))
+                .addGap(25, 25, 25)
                 .addComponent(back)
                 .addGap(38, 38, 38))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 470, 250));
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {Staff_Reg, Tic_Book, Tic_Cancel, back, feedback, flight});
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Admin menu.jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 300));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 560, 300));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/admin Menu.jpg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 400));
 
         pack();
         setLocationRelativeTo(null);
@@ -251,11 +270,14 @@ public class MainMenuAdmin extends javax.swing.JFrame {
             this.hide();
             C.setVisible(true);
         }
-        if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
             Cus_Reg.requestFocus();
         }
-        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
+        if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
             Tic_Book.requestFocus();
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
+            feedback.requestFocus();
         }
     }//GEN-LAST:event_Tic_CancelKeyPressed
 
@@ -265,14 +287,14 @@ public class MainMenuAdmin extends javax.swing.JFrame {
             this.hide();
             C.setVisible(true);
         }
-        if (evt.getKeyCode() == KeyEvent.VK_UP) {
+        if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
             Tic_Cancel.requestFocus();
         }
-        if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
             Staff_Reg.requestFocus();
         }
         if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
-            back.requestFocus();
+            flight.requestFocus();
         }
     }//GEN-LAST:event_Tic_BookKeyPressed
 
@@ -283,10 +305,7 @@ public class MainMenuAdmin extends javax.swing.JFrame {
             frm.setVisible(true);
         }
         if (evt.getKeyCode() == KeyEvent.VK_UP) {
-            Tic_Book.requestFocus();
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
-            feedback.requestFocus();
+            flight.requestFocus();
         }
     }//GEN-LAST:event_backKeyPressed
 
@@ -296,10 +315,10 @@ public class MainMenuAdmin extends javax.swing.JFrame {
             this.hide();
             C.setVisible(true);
         }
-        if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
+        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             Tic_Cancel.requestFocus();
         }
-        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
+        if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
             Staff_Reg.requestFocus();
         }
     }//GEN-LAST:event_Cus_RegKeyPressed
@@ -310,14 +329,11 @@ public class MainMenuAdmin extends javax.swing.JFrame {
             this.hide();
             C.setVisible(true);
         }
-        if (evt.getKeyCode() == KeyEvent.VK_UP) {
+        if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
             Cus_Reg.requestFocus();
         }
-        if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
-            Tic_Book.requestFocus();
-        }
         if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
-            feedback.requestFocus();
+            Tic_Book.requestFocus();
         }
     }//GEN-LAST:event_Staff_RegKeyPressed
 
@@ -328,12 +344,12 @@ public class MainMenuAdmin extends javax.swing.JFrame {
             C.setVisible(true);
         }
         if (evt.getKeyCode() == KeyEvent.VK_UP) {
-            Staff_Reg.requestFocus();
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
-            back.requestFocus();
+            Tic_Cancel.requestFocus();
         }
         if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
+            back.requestFocus();
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
             flight.requestFocus();
         }
     }//GEN-LAST:event_feedbackKeyPressed
@@ -345,6 +361,12 @@ public class MainMenuAdmin extends javax.swing.JFrame {
             C.setVisible(true);
         }
         if (evt.getKeyCode() == KeyEvent.VK_UP) {
+            Tic_Book.requestFocus();
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
+            back.requestFocus();
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
             feedback.requestFocus();
         }
     }//GEN-LAST:event_flightKeyPressed
