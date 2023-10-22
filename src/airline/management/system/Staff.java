@@ -117,6 +117,7 @@ public class Staff extends javax.swing.JFrame {
             }
         });
 
+        login.setBackground(new java.awt.Color(0, 102, 0));
         login.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         login.setText("Login");
         login.addActionListener(new java.awt.event.ActionListener() {
@@ -137,6 +138,7 @@ public class Staff extends javax.swing.JFrame {
             }
         });
 
+        clear.setBackground(new java.awt.Color(0, 102, 0));
         clear.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         clear.setText("Clear");
         clear.addActionListener(new java.awt.event.ActionListener() {

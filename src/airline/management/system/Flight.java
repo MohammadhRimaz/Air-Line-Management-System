@@ -188,6 +188,7 @@ public class Flight extends javax.swing.JFrame {
 
         jDateChooser1.setBackground(new java.awt.Color(255, 255, 153));
 
+        delete.setBackground(new java.awt.Color(153, 0, 0));
         delete.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         delete.setText("DELETE");
         delete.addActionListener(new java.awt.event.ActionListener() {
@@ -196,6 +197,7 @@ public class Flight extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(0, 102, 102));
         jButton3.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         jButton3.setText("BACK");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -204,6 +206,7 @@ public class Flight extends javax.swing.JFrame {
             }
         });
 
+        add.setBackground(new java.awt.Color(0, 102, 0));
         add.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         add.setText("ADD");
         add.addActionListener(new java.awt.event.ActionListener() {
@@ -212,6 +215,7 @@ public class Flight extends javax.swing.JFrame {
             }
         });
 
+        edit.setBackground(new java.awt.Color(0, 102, 0));
         edit.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         edit.setText("EDIT");
         edit.addActionListener(new java.awt.event.ActionListener() {
@@ -403,7 +407,7 @@ public class Flight extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -483,7 +487,6 @@ public class Flight extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Fbox))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, 0)
                         .addComponent(jLabel14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel15))

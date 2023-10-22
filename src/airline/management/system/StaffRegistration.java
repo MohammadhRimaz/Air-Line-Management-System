@@ -86,6 +86,7 @@ public class StaffRegistration extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0,95));
 
+        back.setBackground(new java.awt.Color(0, 102, 102));
         back.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         back.setText("BACK");
         back.addActionListener(new java.awt.event.ActionListener() {
@@ -128,6 +129,7 @@ public class StaffRegistration extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel4.setText("NIC");
 
+        add.setBackground(new java.awt.Color(0, 102, 0));
         add.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         add.setText("ADD");
         add.addActionListener(new java.awt.event.ActionListener() {
@@ -136,6 +138,7 @@ public class StaffRegistration extends javax.swing.JFrame {
             }
         });
 
+        edit.setBackground(new java.awt.Color(0, 102, 0));
         edit.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         edit.setText("EDIT");
         edit.addActionListener(new java.awt.event.ActionListener() {
@@ -144,6 +147,7 @@ public class StaffRegistration extends javax.swing.JFrame {
             }
         });
 
+        delete.setBackground(new java.awt.Color(153, 0, 0));
         delete.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         delete.setText("DELETE");
         delete.addActionListener(new java.awt.event.ActionListener() {
@@ -237,19 +241,15 @@ public class StaffRegistration extends javax.swing.JFrame {
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(mail, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addGap(39, 39, 39)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(39, 39, 39)
-                                .addComponent(jLabel5)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(39, 39, 39)
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(84, 84, 84)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(shiftbox, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(genderbox, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(28, Short.MAX_VALUE))))
+                                    .addComponent(genderbox, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(add)
@@ -264,8 +264,8 @@ public class StaffRegistration extends javax.swing.JFrame {
                         .addGap(50, 50, 50)
                         .addComponent(delete)
                         .addGap(50, 50, 50)
-                        .addComponent(back)
-                        .addGap(42, 42, 42))))
+                        .addComponent(back)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -321,8 +321,7 @@ public class StaffRegistration extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(genderbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(19, 19, 19)))
+                            .addComponent(genderbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(23, 23, 23)

@@ -161,7 +161,7 @@ public class TicketCancellation extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("CUSTOMER ID");
 
@@ -169,6 +169,7 @@ public class TicketCancellation extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("TICKET CANCELLATION");
 
+        cancel.setBackground(new java.awt.Color(0, 102, 0));
         cancel.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         cancel.setText("CANCEL");
         cancel.setToolTipText("");
@@ -203,11 +204,11 @@ public class TicketCancellation extends javax.swing.JFrame {
         cusname.setBackground(new java.awt.Color(255, 255, 153));
         cusname.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel2.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("CUSTOMER NAME");
 
-        jLabel3.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("PASSPORT NO.");
 
@@ -215,19 +216,19 @@ public class TicketCancellation extends javax.swing.JFrame {
         psprt.setBackground(new java.awt.Color(255, 255, 153));
         psprt.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel6.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("FLIGHT NO.");
 
-        jLabel7.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("SOURCE");
 
-        jLabel8.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("DEPARTURE DATE");
 
-        jLabel9.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("DEPARTURE TIME");
 
@@ -247,11 +248,11 @@ public class TicketCancellation extends javax.swing.JFrame {
         Atime.setBackground(new java.awt.Color(255, 255, 153));
         Atime.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel10.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("ARRIVAL TIME");
 
-        jLabel11.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("DESTINATION");
 
@@ -259,7 +260,7 @@ public class TicketCancellation extends javax.swing.JFrame {
         destination.setBackground(new java.awt.Color(255, 255, 153));
         destination.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel12.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("ARRIVAL DATE");
 
@@ -267,11 +268,11 @@ public class TicketCancellation extends javax.swing.JFrame {
         Adate.setBackground(new java.awt.Color(255, 255, 153));
         Adate.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel14.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("SEAT TYPE");
 
-        jLabel15.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("TICKET PRICE");
 
@@ -279,7 +280,7 @@ public class TicketCancellation extends javax.swing.JFrame {
         ticPrice.setBackground(new java.awt.Color(255, 255, 153));
         ticPrice.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel18.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("TICKET ID");
 
@@ -303,14 +304,14 @@ public class TicketCancellation extends javax.swing.JFrame {
         cusid.setBackground(new java.awt.Color(255, 255, 153));
         cusid.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel5.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("FINE");
 
         fine.setBackground(new java.awt.Color(255, 255, 153));
         fine.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel16.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("REFUND");
 
@@ -322,11 +323,11 @@ public class TicketCancellation extends javax.swing.JFrame {
         bookingdate.setBackground(new java.awt.Color(255, 255, 153));
         bookingdate.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel13.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("BOOKED DATE");
 
-        jLabel17.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("CANCEL DATE");
 

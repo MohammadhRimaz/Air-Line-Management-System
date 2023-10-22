@@ -104,32 +104,42 @@ public class Feedback extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(1).setMaxWidth(160);
         }
 
+        jLabel2.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel2.setText("Customer ID");
 
+        jLabel3.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel3.setText("Customer Name");
 
+        jLabel4.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jLabel4.setText("Feedback");
 
+        feedback.setBackground(new java.awt.Color(255, 255, 153));
         feedback.setColumns(20);
         feedback.setRows(5);
         jScrollPane2.setViewportView(feedback);
 
         cusname.setEditable(false);
+        cusname.setBackground(new java.awt.Color(255, 255, 153));
 
-        add.setText("Add");
+        add.setBackground(new java.awt.Color(0, 102, 0));
+        add.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        add.setText("ADD");
         add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addActionPerformed(evt);
             }
         });
 
-        back.setText("Back");
+        back.setBackground(new java.awt.Color(0, 102, 102));
+        back.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        back.setText("BACK");
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
             }
         });
 
+        cusid.setBackground(new java.awt.Color(255, 255, 153));
         cusid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cusidActionPerformed(evt);
@@ -160,12 +170,14 @@ public class Feedback extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(cusid, javax.swing.GroupLayout.Alignment.LEADING, 0, 198, Short.MAX_VALUE)
                                 .addComponent(cusname, javax.swing.GroupLayout.Alignment.LEADING)))))
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel2, jLabel3, jLabel4});
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {add, back});
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {cusid, cusname});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,10 +206,13 @@ public class Feedback extends javax.swing.JFrame {
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {add, back});
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, -1, -1));
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {cusid, cusname});
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 730, -1));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0, 95));
 
+        jLabel1.setFont(new java.awt.Font("Gill Sans Ultra Bold", 1, 18)); // NOI18N
         jLabel1.setText("FEEDBACK");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -205,19 +220,19 @@ public class Feedback extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(313, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(274, 274, 274))
+                .addContainerGap(321, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(244, 244, 244))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(22, 22, 22))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 708, 50));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 730, 50));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/feedback.jpg"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 540));
