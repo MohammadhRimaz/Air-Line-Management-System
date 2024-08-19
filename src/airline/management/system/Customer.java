@@ -168,22 +168,28 @@ public class Customer extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Customer Name");
 
         jLabel4.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Nationality");
 
         jLabel3.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Gender");
 
         jLabel5.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Passport No.");
 
         jLabel6.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Address");
 
         cusname.setBackground(new java.awt.Color(255, 255, 153));
 
+        add.setBackground(new java.awt.Color(0, 102, 0));
         add.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         add.setText("ADD");
         add.addActionListener(new java.awt.event.ActionListener() {
@@ -192,6 +198,7 @@ public class Customer extends javax.swing.JFrame {
             }
         });
 
+        edit.setBackground(new java.awt.Color(0, 102, 0));
         edit.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         edit.setText("EDIT");
         edit.addActionListener(new java.awt.event.ActionListener() {
@@ -200,6 +207,7 @@ public class Customer extends javax.swing.JFrame {
             }
         });
 
+        delete.setBackground(new java.awt.Color(153, 0, 0));
         delete.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         delete.setText("DELETE");
         delete.addActionListener(new java.awt.event.ActionListener() {
@@ -232,6 +240,7 @@ public class Customer extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jLabel8.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Contact No");
 
         genderbox.setBackground(new java.awt.Color(255, 255, 153));
@@ -252,11 +261,13 @@ public class Customer extends javax.swing.JFrame {
         contact.setBackground(new java.awt.Color(255, 255, 153));
 
         jLabel9.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Age");
 
         age.setBackground(new java.awt.Color(255, 255, 153));
 
         jLabel7.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Email");
 
         email.setBackground(new java.awt.Color(255, 255, 153));
@@ -265,6 +276,7 @@ public class Customer extends javax.swing.JFrame {
         cusid.setBackground(new java.awt.Color(255, 255, 153));
 
         jLabel10.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Cus_ID");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -389,6 +401,7 @@ public class Customer extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 0, 0, 95));
 
         jLabel1.setFont(new java.awt.Font("Gill Sans Ultra Bold", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Customer Management");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

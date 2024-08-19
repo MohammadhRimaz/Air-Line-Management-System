@@ -32,9 +32,8 @@ public class TicketCancellation extends javax.swing.JFrame {
      */
     
       
-    Connection con;
+    Connection con = null;
     PreparedStatement pst = null;
-    PreparedStatement pst2 = null;
     PreparedStatement pst1 = null;
     ResultSet rs;
     ResultSet rs1;
@@ -147,6 +146,7 @@ public class TicketCancellation extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0, 95));
@@ -171,7 +171,7 @@ public class TicketCancellation extends javax.swing.JFrame {
 
         cancel.setBackground(new java.awt.Color(0, 102, 0));
         cancel.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
-        cancel.setText("CANCEL");
+        cancel.setText("CANCEL TICKET");
         cancel.setToolTipText("");
         cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -378,7 +378,7 @@ public class TicketCancellation extends javax.swing.JFrame {
                 .addGap(47, 47, 47)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cancel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -405,8 +405,6 @@ public class TicketCancellation extends javax.swing.JFrame {
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {Adate, Atime, Ddate, Dtime, bookingdate, cusid, cusname, destination, fine, flightno, jDateChooser1, psprt, refund, seattype, source, ticID, ticPrice});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {back, cancel});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -675,6 +673,11 @@ public class TicketCancellation extends javax.swing.JFrame {
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(this,"Ticket Cancelled.");
                 
+                //Delete the booked ticket from the booking table
+                pst = con.prepareStatement("DELETE FROM ticket_booking WHERE Tic_ID = ? ");
+                pst.setString(1, tid);
+                pst.executeUpdate();
+                
                 // Update the flight table with new values for Booked_Seats and Available_Seats
                 updateFlightSeats(fno);
                 
@@ -703,6 +706,14 @@ public class TicketCancellation extends javax.swing.JFrame {
             Logger.getLogger(TicketCancellation.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(TicketCancellation.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            //Close resources
+            try{
+                if(pst != null)pst.close();
+                if(con != null)con.close();
+            }catch(SQLException ex){
+                Logger.getLogger(TicketCancellation.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         
     }//GEN-LAST:event_cancelActionPerformed

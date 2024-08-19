@@ -241,6 +241,7 @@ public class TicketBooking extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 102, 80));
@@ -415,8 +416,9 @@ public class TicketBooking extends javax.swing.JFrame {
             }
         });
 
+        jLabel19.setBackground(new java.awt.Color(255, 255, 255));
         jLabel19.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(193, 14, 23));
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Press Enter after inserted the value here...");
         jLabel19.setToolTipText("");
 
