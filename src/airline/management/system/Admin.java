@@ -241,12 +241,12 @@ public class Admin extends javax.swing.JFrame {
 
         jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {pswrd, uname});
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 380, 240));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 380, 240));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/admin.jpg"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 360));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 310));
 
-        setSize(new java.awt.Dimension(620, 360));
+        setSize(new java.awt.Dimension(510, 310));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

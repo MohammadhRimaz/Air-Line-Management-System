@@ -210,10 +210,10 @@ public class MainMenuAdmin extends javax.swing.JFrame {
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {Staff_Reg, Tic_Book, Tic_Cancel, back, feedback, flight});
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 560, 300));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 560, 300));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/admin Menu.jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 400));
+        jLabel2.setIcon(new javax.swing.ImageIcon("E:\\Documents\\JAVA\\Airline Management System\\Images\\admin Menu.jpg")); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 400));
 
         pack();
         setLocationRelativeTo(null);
