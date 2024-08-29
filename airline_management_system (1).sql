@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2023 at 09:40 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- Generation Time: Aug 22, 2024 at 03:04 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,7 +41,9 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`ID`, `Name`, `User_Name`, `Password`, `Address`, `Contact_No`) VALUES
-(1, 'Mohammadh Rimaz', 'MRimaz2', '1234@Rmz', 'Welamboda', 773397333);
+(1, 'Ihshan', 'ihshan001', '1234', 'Gampola', 785249280),
+(3, 'Mufees', 'mufees1', '2222', 'Vatadeniya', 765323211),
+(6, 'Rimaz', 'rimas200', '2345', 'Welamboda', 773397333);
 
 -- --------------------------------------------------------
 
@@ -70,7 +72,8 @@ INSERT INTO `customer` (`Cus_ID`, `Customer_Name`, `Gender`, `Age`, `Nationality
 ('C0002', 'Micheal', 'Male', 32, 'Sri Lanka', '729852929A', 'micheal123@gmail.com', '81, Colombo Road, Jaffna.', 778289229),
 ('C0003', 'Mohamed Faris', 'Male', 40, 'Pakistan', '9739742922A', 'mfarisss@gmail.com', '62/2, Lahore City, Pakistan ', 777292992),
 ('C0004', 'Nivetha Swamy', 'Female', 25, 'India', '8593202020A', 'nivethaswamy@gmail.com', '1200/52, Vellore, Chennai.', 1128383737),
-('C0005', 'Anjana Madhav', 'Male', 39, 'Sri Lanka', '9642799623A', 'madhav76@gmail.com', '33, Wellawatte, Colombo.', 714382992);
+('C0005', 'Anjana Madhav', 'Male', 39, 'Sri Lanka', '9642799623A', 'madhav76@gmail.com', '33, Wellawatte, Colombo.', 714382992),
+('C0006', 'Zaky', 'Female', 42, 'Sri Lanka', '4978252603', 'zaky342@gmail.com', '10/2, Matale rd, Kandy', 793279412);
 
 -- --------------------------------------------------------
 
@@ -121,8 +124,8 @@ CREATE TABLE `flight` (
 
 INSERT INTO `flight` (`No`, `Airline`, `Flight_No`, `No_of_Seats`, `Booked_Seats`, `Available_Seats`, `Seat_Type`, `Source`, `Departure_Date`, `Departure_Time`, `Destination`, `Arrival_Date`, `Arrival_Time`, `Ticket_Price`) VALUES
 (12, 'Sri Lankan Airlines', 'S1', 400, 0, 400, 'Economy Class, Business Class', 'Colombo - Sri Lanka', '2023/09/30', '9.00 am', 'Delhi - India', '2023/09/30', '10.55 am', '60000, 100000'),
-(13, 'Qatar Airways', 'QA1', 600, 3, 597, 'Economy Class, Business Class, First Class', 'Doha - Qatar', '2023/10/05', '7.00 pm', 'Colombo - Sri Lanka', '2023/10/06', '2.00 am', '120000, 200000, 350000'),
-(14, 'Dubai Emirates', 'DE1', 450, 0, NULL, 'Economy Class, Business Class', 'Dubai - UAE', '2023/10/10', '2.00 am', 'Melbourne - Australia', '2023/10/11', '5.00 pm', '400000, 500000'),
+(13, 'Qatar Airways', 'QA1', 600, 2, 598, 'Economy Class, Business Class, First Class', 'Doha - Qatar', '2023/10/05', '7.00 pm', 'Colombo - Sri Lanka', '2023/10/06', '2.00 am', '120000, 200000, 350000'),
+(14, 'Dubai Emirates', 'DE1', 450, -1, 451, 'Economy Class, Business Class', 'Dubai - UAE', '2023/10/10', '2.00 am', 'Melbourne - Australia', '2023/10/11', '5.00 pm', '400000, 500000'),
 (15, 'Sri Lankan Airlines', 'S2', 250, 1, 249, 'Economy Class, Business Class', 'Colombo - Sri Lanka', '2023/09/28', '8.35 pm', 'Chennai - India', '2023/09/28', '9.40 pm', '40000, 95000');
 
 -- --------------------------------------------------------
@@ -150,8 +153,9 @@ CREATE TABLE `staff` (
 --
 
 INSERT INTO `staff` (`ID`, `Name`, `Gender`, `NIC`, `User_Name`, `Password`, `Email`, `Address`, `Contact_No`, `Payment`, `Shift`) VALUES
-(1, 'L Kumar', 'Male', '9738486582v', 'Kumar1', '123kumar', 'kumar1@gmail.com', '64, Colombo rd, Kandy.', 711687384, '40000.00', 'Day'),
-(3, 'Julia A', 'Female', '2001454343', 'Juli#1', '4567', 'julia2@gmail.com', '34/3, Gampola.', 773423429, '30000.00', 'Day');
+(1, 'L Kumar', 'Male', '9738486582v', 'Kumar1', '123kumar', 'kumar1@gmail.com', '64, Colombo rd, Kandy.', 711687384, 40000.00, 'Day'),
+(3, 'Julia A', 'Female', '2001454343', 'Juli#1', '4567', 'julia2@gmail.com', '34/2, Gampola.', 773423429, 30000.00, 'Day'),
+(4, 'T Perera', 'Male', '54285394710', 'Perera1', 'Pera32', 'per12@gmail.com', '65/1, Galle', 738947936, 30000.00, 'Night');
 
 -- --------------------------------------------------------
 
@@ -187,8 +191,7 @@ INSERT INTO `ticket_booking` (`Tic_ID`, `Booking_Date`, `Cus_ID`, `Customer_Name
 ('T0001', '2023/09/27', 'C0001', 'Anjali N', 'Sri Lanka', '4987392231A', 'QA1', 'Doha - Qatar', '2023/10/05', '7.00 pm', 'Colombo - Sri Lanka', '2023/10/06', '2.00 am', 'Economy Class', '120000', '11', '106800.00'),
 ('T0002', '2023/09/20', 'C0002', 'Micheal', 'Sri Lanka', '729852929A', 'QA1', 'Doha - Qatar', '2023/10/05', '7.00 pm', 'Colombo - Sri Lanka', '2023/10/06', '2.00 am', 'Economy Class', '120000', '12', '105600.00'),
 ('T0003', '2023/09/27', 'C0003', 'Mohamed Faris', 'Pakistan', '9739742922A', 'S1', 'Colombo - Sri Lanka', '2023/09/30', '9.00 am', 'Delhi - India', '2023/09/30', '10.55 am', 'Economy Class', '60000', '15', '51000.00'),
-('T0004', '2023/09/27', 'C0004', 'Nivetha Swamy', 'India', '8593202020A', 'S2', 'Colombo - Sri Lanka', '2023/09/28', '8.35 pm', 'Chennai - India', '2023/09/28', '9.40 pm', 'Business Class', '95000', '15', '80750.00'),
-('T0005', '2023/09/30', 'C0005', 'Anjana Madhav', 'Sri Lanka', '9642799623A', 'QA1', 'Doha - Qatar', '2023/10/05', '7.00 pm', 'Colombo - Sri Lanka', '2023/10/06', '2.00 am', 'First Class', '350000', '20', '280000.00');
+('T0004', '2023/09/27', 'C0004', 'Nivetha Swamy', 'India', '8593202020A', 'S2', 'Colombo - Sri Lanka', '2023/09/28', '8.35 pm', 'Chennai - India', '2023/09/28', '9.40 pm', 'Business Class', '95000', '15', '80750.00');
 
 -- --------------------------------------------------------
 
@@ -217,7 +220,7 @@ CREATE TABLE `ticket_cancellation` (
 --
 
 INSERT INTO `ticket_cancellation` (`No`, `Tic_ID`, `Customer_ID`, `Customer_Name`, `Passport_No`, `Flight_No`, `Booked_Date`, `Cancelled_Date`, `Seat_Type`, `Source`, `Destination`, `Fine`, `Refund`) VALUES
-(1, 'T0003', 'C0003', 'Mohamed Faris', '9739742922A', 'S1', '2023/09/27', '2023/09/28', 'Economy Class', 'Colombo - Sri Lanka', 'Delhi - India', '10000', '50000.00');
+(4, 'T0005', 'C0005', 'Anjana Madhav', '9642799623A', 'QA1', '2023/09/30', '2024/08/06', 'First Class', 'Doha - Qatar', 'Colombo - Sri Lanka', '10000', '340000.00');
 
 --
 -- Indexes for dumped tables
@@ -277,7 +280,7 @@ ALTER TABLE `ticket_cancellation`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `feedback`
@@ -295,13 +298,13 @@ ALTER TABLE `flight`
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `ticket_cancellation`
 --
 ALTER TABLE `ticket_cancellation`
-  MODIFY `No` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `No` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
