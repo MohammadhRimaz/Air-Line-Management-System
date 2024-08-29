@@ -212,7 +212,7 @@ public class MainMenuAdmin extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 560, 300));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("E:\\Documents\\JAVA\\Airline Management System\\Images\\admin Menu.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin Menu.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 400));
 
         pack();
